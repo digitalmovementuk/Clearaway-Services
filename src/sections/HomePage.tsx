@@ -170,22 +170,25 @@ export default function HomePage() {
             aria-hidden="true"
             data-testid="hero-video"
           />
-          <div className="absolute inset-0 bg-clearaway-navy/[0.66]" aria-hidden="true" />
-          <div
-            className="absolute inset-0 bg-[radial-gradient(circle_at_70%_40%,rgba(0,163,238,0.16),transparent_34%),linear-gradient(90deg,rgba(9,3,77,0.92)_0%,rgba(9,3,77,0.78)_42%,rgba(9,3,77,0.54)_100%)]"
-            aria-hidden="true"
-          />
-          <div className="absolute inset-x-0 top-0 h-36 bg-white/[0.09]" aria-hidden="true" />
           <div className="section-shell relative z-10 py-12 lg:py-16">
             <div className="hero-grid">
-              <Reveal className="mx-auto max-w-3xl text-center lg:mx-0 lg:text-left" data-testid="hero-copy">
+              <Reveal
+                className="mx-auto max-w-3xl rounded-[8px] bg-clearaway-navy/20 p-4 text-center shadow-[0_18px_60px_rgba(9,3,77,0.18)] backdrop-blur-[2px] sm:p-6 lg:mx-0 lg:bg-transparent lg:p-0 lg:text-left lg:shadow-none lg:backdrop-blur-0"
+                data-testid="hero-copy"
+              >
                 <p className="inline-flex rounded-[6px] bg-white/[0.12] px-3 py-2 text-sm font-bold leading-5 text-white ring-1 ring-white/[0.22]">
                   London, Surrey and the South East
                 </p>
-                <h1 className="mt-6 text-4xl font-extrabold leading-[1.12] text-white sm:text-5xl sm:leading-[1.1] lg:text-6xl lg:leading-[1.06]">
+                <h1
+                  className="mt-6 text-4xl font-extrabold leading-[1.12] text-white sm:text-5xl sm:leading-[1.1] lg:text-6xl lg:leading-[1.06]"
+                  style={{ textShadow: '0 10px 32px rgba(9, 3, 77, 0.5)' }}
+                >
                   Licensed asbestos removal and strip-out without project drift.
                 </h1>
-                <p className="mt-5 max-w-2xl text-lg leading-8 text-white/[0.88] lg:text-xl lg:leading-9">
+                <p
+                  className="mt-5 max-w-2xl text-lg leading-8 text-white/[0.96] lg:text-xl lg:leading-9"
+                  style={{ textShadow: '0 8px 26px rgba(9, 3, 77, 0.42)' }}
+                >
                   Clearaway Services supports contractors, developers and property managers with asbestos surveys, air
                   testing, safe removal, demolition and soft strip-out work.
                 </p>
@@ -200,7 +203,7 @@ export default function HomePage() {
                 <div className="mt-8 grid gap-3 text-left sm:grid-cols-3">
                   {['15+ years experience stated', 'HSE licensed asbestos work', '24/7 project support stated'].map(
                     (item) => (
-                      <div key={item} className="rounded-[8px] border border-white/[0.18] bg-white/10 p-3 backdrop-blur">
+                      <div key={item} className="rounded-[8px] border border-white/[0.24] bg-clearaway-navy/28 p-3 backdrop-blur-md">
                         <BadgeCheck aria-hidden="true" className="mb-2 text-clearaway-green" size={22} />
                         <p className="text-sm font-semibold leading-5 text-white">{item}</p>
                       </div>
