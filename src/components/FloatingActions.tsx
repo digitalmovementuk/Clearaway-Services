@@ -27,8 +27,20 @@ export default function FloatingActions() {
         className="fixed bottom-[104px] right-4 z-40 inline-flex h-12 w-12 items-center justify-center rounded-full bg-[#25D366] text-white shadow-[0_14px_30px_rgba(37,211,102,0.35)] ring-2 ring-white transition-transform duration-300 hover:-translate-y-1 sm:bottom-[88px] sm:right-6 sm:h-14 sm:w-14"
         style={{ marginBottom: 'env(safe-area-inset-bottom)' }}
         data-testid="whatsapp-button"
-        animate={reduceMotion ? undefined : { scale: [1, 1.04, 1] }}
-        transition={reduceMotion ? undefined : { duration: 2.4, repeat: Infinity, ease: 'easeInOut' }}
+        tabIndex={visible ? 0 : -1}
+        aria-hidden={!visible}
+        initial={false}
+        animate={
+          reduceMotion
+            ? { opacity: visible ? 1 : 0, y: visible ? 0 : 16, pointerEvents: visible ? 'auto' : 'none' }
+            : {
+                opacity: visible ? 1 : 0,
+                y: visible ? 0 : 16,
+                pointerEvents: visible ? 'auto' : 'none',
+                scale: visible ? [1, 1.04, 1] : 1,
+              }
+        }
+        transition={reduceMotion ? { duration: 0.3 } : { duration: visible ? 2.4 : 0.3, repeat: visible ? Infinity : 0, ease: 'easeInOut' }}
       >
         <MessageCircle aria-hidden="true" size={25} />
       </motion.a>

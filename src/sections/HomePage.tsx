@@ -18,9 +18,14 @@ import FloatingActions from '../components/FloatingActions'
 import Navbar from '../components/Navbar'
 import Reveal from '../components/Reveal'
 import TestimonialCarousel from '../components/TestimonialCarousel'
-import surveyImage from '../assets/images/asbestos-survey.jpg'
-import demolitionImage from '../assets/images/demolition-building.jpg'
-import aboutImage from '../assets/images/about-team-900.jpeg'
+import airTestingImage from '../assets/images/client-work/air-testing-detail.jpg'
+import asbestosSamplingImage from '../assets/images/client-work/asbestos-sampling.jpg'
+import brandedRoofImage from '../assets/images/client-work/branded-roof-operative.jpg'
+import controlledContainmentImage from '../assets/images/client-work/controlled-containment.jpg'
+import demolitionExcavationImage from '../assets/images/client-work/demolition-excavation.jpg'
+import exteriorContainmentImage from '../assets/images/client-work/exterior-containment.jpg'
+import roofSheetRemovalImage from '../assets/images/client-work/roof-sheet-removal.jpg'
+import scaffoldContainmentImage from '../assets/images/client-work/scaffold-containment.jpg'
 import hseLogo from '../assets/images/hse-logo.jpg'
 import scopesLogo from '../assets/images/scopes-logo.jpg'
 import spectraLogo from '../assets/images/spectra-site-logo.png'
@@ -28,8 +33,8 @@ import lsslLogo from '../assets/images/lssl.jpg'
 import logo from '../assets/images/clearaway-logo.png'
 
 const baseUrl = import.meta.env.BASE_URL
-const heroImage = `${baseUrl}hero-clearaway-1400.jpg`
-const heroSrcSet = `${baseUrl}hero-clearaway-900.jpg 900w, ${baseUrl}hero-clearaway-1400.jpg 1400w`
+const heroImage = `${baseUrl}hero-clearaway-work-1400.jpg`
+const heroSrcSet = `${baseUrl}hero-clearaway-work-640.jpg 640w, ${baseUrl}hero-clearaway-work-900.jpg 780w, ${baseUrl}hero-clearaway-work-1400.jpg 1050w`
 
 const services = [
   {
@@ -38,6 +43,9 @@ const services = [
       'Careful containment, handling and disposal for commercial premises, industrial estates, demolition sites and outbuildings.',
     benefit: 'Protect people and keep works moving under a controlled plan.',
     icon: ShieldCheck,
+    image: roofSheetRemovalImage,
+    imageAlt: 'Clearaway operative removing asbestos roof sheeting under controlled conditions',
+    imagePosition: 'object-[58%_50%]',
   },
   {
     title: 'Asbestos Surveys',
@@ -45,6 +53,9 @@ const services = [
       'Management surveys and refurbishment or demolition surveys for buildings where asbestos may be present or disturbed.',
     benefit: 'Get clear reporting before maintenance, fit-out or demolition starts.',
     icon: ClipboardCheck,
+    image: asbestosSamplingImage,
+    imageAlt: 'Clearaway asbestos sampling work inside a commercial building',
+    imagePosition: 'object-[54%_50%]',
   },
   {
     title: 'Air Testing & Monitoring',
@@ -52,6 +63,9 @@ const services = [
       'Background, leak, reassurance and personal monitoring, plus four-stage clearance testing for reoccupation.',
     benefit: 'Evidence air quality and clearance at the moments that matter.',
     icon: Sparkles,
+    image: airTestingImage,
+    imageAlt: 'Air monitoring equipment being used to test a suspended ceiling area',
+    imagePosition: 'object-[50%_50%]',
   },
   {
     title: 'Soft Strip Out',
@@ -59,6 +73,9 @@ const services = [
       'Internal strip-outs, tenancy make-goods and dismantling for offices, retail units, warehouses and refurbishments.',
     benefit: 'Prepare spaces for the next phase with less disruption.',
     icon: Building2,
+    image: controlledContainmentImage,
+    imageAlt: 'Blue containment enclosure prepared for controlled asbestos and strip-out work',
+    imagePosition: 'object-[44%_50%]',
   },
   {
     title: 'Demolition & Excavation',
@@ -66,6 +83,9 @@ const services = [
       'Controlled demolition and excavation support with experienced supervision and practical site management.',
     benefit: 'A safer route through complex or time-sensitive dismantling.',
     icon: HardHat,
+    image: demolitionExcavationImage,
+    imageAlt: 'Clearaway operative managing demolition and excavation preparation',
+    imagePosition: 'object-[35%_50%]',
   },
   {
     title: 'Building & Office Strip Outs',
@@ -73,6 +93,9 @@ const services = [
       'Removal of partition walls, floor coverings, ceilings, mechanical systems, utilities and plant-room items.',
     benefit: 'One coordinated team for the heavy internal work.',
     icon: Factory,
+    image: exteriorContainmentImage,
+    imageAlt: 'External blue containment sheeting installed around a property',
+    imagePosition: 'object-[50%_50%]',
   },
 ]
 
@@ -104,6 +127,24 @@ const socialLinks = [
   { label: 'X', href: 'https://twitter.com/ClearawayukLtd' },
 ]
 
+const siteImpressions = [
+  {
+    src: controlledContainmentImage,
+    alt: 'Blue containment enclosure prepared on a residential site',
+    label: 'Containment setup',
+  },
+  {
+    src: airTestingImage,
+    alt: 'Air testing detail for asbestos monitoring',
+    label: 'Air monitoring',
+  },
+  {
+    src: brandedRoofImage,
+    alt: 'Clearaway operative working on a roof area in branded protective clothing',
+    label: 'Site work',
+  },
+]
+
 export default function HomePage() {
   return (
     <div id="top" className="bg-white">
@@ -118,17 +159,18 @@ export default function HomePage() {
           data-testid="hero"
         >
           <img
-            className="absolute inset-0 h-full w-full object-cover"
+            className="absolute inset-0 h-full w-full object-cover object-[54%_50%]"
             src={heroImage}
             srcSet={heroSrcSet}
             sizes="100vw"
-            alt="Asbestos safety equipment and protective materials"
-            width="1400"
-            height="933"
+            alt="Clearaway operative collecting an asbestos sample inside a commercial building"
+            width="1100"
+            height="745"
             fetchPriority="high"
           />
-          <div className="absolute inset-0 bg-clearaway-navy/[0.78]" aria-hidden="true" />
-          <div className="absolute inset-x-0 top-0 h-36 bg-white/[0.18]" aria-hidden="true" />
+          <div className="absolute inset-0 bg-clearaway-navy/[0.58]" aria-hidden="true" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_72%_45%,rgba(0,163,238,0.22),transparent_32%),linear-gradient(90deg,rgba(9,3,77,0.86)_0%,rgba(9,3,77,0.68)_44%,rgba(9,3,77,0.36)_100%)]" aria-hidden="true" />
+          <div className="absolute inset-x-0 top-0 h-36 bg-white/[0.12]" aria-hidden="true" />
           <div className="section-shell relative z-10 py-12 lg:py-16">
             <div className="hero-grid">
               <Reveal className="mx-auto max-w-3xl text-center lg:mx-0 lg:text-left" data-testid="hero-copy">
@@ -187,25 +229,45 @@ export default function HomePage() {
         </section>
 
         <section className="py-20 sm:py-24">
-          <div className="section-shell grid gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:items-center">
-            <Reveal>
-              <p className="eyebrow">Control before disruption</p>
-              <h2 className="mt-3 text-3xl font-extrabold leading-tight text-clearaway-navy sm:text-4xl">
-                Refurbishment and demolition work gets expensive when asbestos risk is unclear.
-              </h2>
-            </Reveal>
-            <Reveal delay={0.08}>
-              <div className="grid gap-5 text-lg leading-8 text-slate-600">
-                <p>
-                  Contractors and property teams need fast answers, safe working methods and clear communication before
-                  work starts opening up a building.
-                </p>
-                <p>
-                  Clearaway’s current service mix is strongest where asbestos compliance and strip-out planning overlap:
-                  surveys, testing, removal, dismantling, waste handling and practical site coordination.
-                </p>
-              </div>
-            </Reveal>
+          <div className="section-shell">
+            <div className="grid gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:items-center">
+              <Reveal>
+                <p className="eyebrow">Control before disruption</p>
+                <h2 className="mt-3 text-3xl font-extrabold leading-tight text-clearaway-navy sm:text-4xl">
+                  Refurbishment and demolition work gets expensive when asbestos risk is unclear.
+                </h2>
+              </Reveal>
+              <Reveal delay={0.08}>
+                <div className="grid gap-5 text-lg leading-8 text-slate-600">
+                  <p>
+                    Contractors and property teams need fast answers, safe working methods and clear communication before
+                    work starts opening up a building.
+                  </p>
+                  <p>
+                    Clearaway’s current service mix is strongest where asbestos compliance and strip-out planning overlap:
+                    surveys, testing, removal, dismantling, waste handling and practical site coordination.
+                  </p>
+                </div>
+              </Reveal>
+            </div>
+            <div className="mt-12 grid gap-4 md:grid-cols-3">
+              {siteImpressions.map((item, index) => (
+                <Reveal key={item.label} delay={index * 0.04} className="group relative h-64 overflow-hidden rounded-[8px] bg-clearaway-navy shadow-clean">
+                  <img
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                    src={item.src}
+                    alt={item.alt}
+                    width="1500"
+                    height="1100"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-clearaway-navy/82 via-clearaway-navy/12 to-transparent" aria-hidden="true" />
+                  <p className="absolute bottom-4 left-4 rounded-[6px] bg-white px-3 py-2 text-sm font-extrabold leading-5 text-clearaway-blue">
+                    {item.label}
+                  </p>
+                </Reveal>
+              ))}
+            </div>
           </div>
         </section>
 
@@ -226,20 +288,33 @@ export default function HomePage() {
                 <Reveal
                   key={service.title}
                   delay={index * 0.03}
-                  className="group relative overflow-hidden rounded-[8px] border border-clearaway-line bg-white p-6 shadow-[0_12px_34px_rgba(9,3,77,0.07)] transition-transform duration-300 hover:-translate-y-1"
+                  className="group relative overflow-hidden rounded-[8px] border border-clearaway-line bg-white shadow-[0_12px_34px_rgba(9,3,77,0.07)] transition-transform duration-300 hover:-translate-y-1"
                 >
                   <span className="absolute inset-x-0 top-0 h-1 bg-clearaway-cyan" aria-hidden="true" />
-                  <span className="grid h-12 w-12 place-items-center rounded-[8px] bg-clearaway-mist text-clearaway-blue">
-                    <service.icon aria-hidden="true" size={28} />
-                  </span>
-                  <h3 className="mt-5 text-xl font-extrabold leading-7 text-clearaway-navy">{service.title}</h3>
-                  <p className="mt-3 text-base leading-7 text-slate-600">{service.description}</p>
-                  <p className="mt-4 border-l-4 border-clearaway-green pl-3 text-sm font-bold leading-6 text-clearaway-blue">
-                    {service.benefit}
-                  </p>
-                  <a className="mt-5 inline-flex min-h-11 items-center font-bold text-clearaway-blue" href="#contact">
-                    Ask about {service.title.toLowerCase()} <ArrowRight aria-hidden="true" className="ml-2" size={17} />
-                  </a>
+                  <div className="relative h-48 overflow-hidden bg-clearaway-navy">
+                    <img
+                      className={`h-full w-full object-cover ${service.imagePosition}`}
+                      src={service.image}
+                      alt={service.imageAlt}
+                      width="1500"
+                      height="1100"
+                      loading="lazy"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-clearaway-navy/75 via-clearaway-navy/10 to-transparent" aria-hidden="true" />
+                    <span className="absolute bottom-4 left-4 grid h-12 w-12 place-items-center rounded-[8px] bg-white text-clearaway-blue shadow-[0_12px_28px_rgba(0,0,0,0.18)]">
+                      <service.icon aria-hidden="true" size={28} />
+                    </span>
+                  </div>
+                  <div className="p-6">
+                    <h3 className="text-xl font-extrabold leading-7 text-clearaway-navy">{service.title}</h3>
+                    <p className="mt-3 text-base leading-7 text-slate-600">{service.description}</p>
+                    <p className="mt-4 border-l-4 border-clearaway-green pl-3 text-sm font-bold leading-6 text-clearaway-blue">
+                      {service.benefit}
+                    </p>
+                    <a className="mt-5 inline-flex min-h-11 items-center font-bold text-clearaway-blue" href="#contact">
+                      Ask about {service.title.toLowerCase()} <ArrowRight aria-hidden="true" className="ml-2" size={17} />
+                    </a>
+                  </div>
                 </Reveal>
               ))}
             </div>
@@ -249,14 +324,24 @@ export default function HomePage() {
         <section className="py-20 sm:py-24">
           <div className="section-shell grid gap-10 lg:grid-cols-2 lg:items-center">
             <Reveal>
-              <img
-                className="h-full max-h-[560px] w-full rounded-[8px] object-cover shadow-clean"
-                src={demolitionImage}
-                alt="Demolition and strip-out machinery on site"
-                width="715"
-                height="515"
-                loading="lazy"
-              />
+              <div className="relative overflow-hidden rounded-[8px] bg-clearaway-navy shadow-clean">
+                <img
+                  className="h-[520px] w-full object-cover object-[48%_50%]"
+                  src={scaffoldContainmentImage}
+                  alt="Clearaway scaffold and containment setup on a commercial exterior"
+                  width="1800"
+                  height="738"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-clearaway-navy/82 via-transparent to-clearaway-navy/10" aria-hidden="true" />
+                <div className="absolute bottom-5 left-5 right-5 grid gap-3 sm:grid-cols-3">
+                  {['Contain', 'Remove', 'Clear'].map((item) => (
+                    <span key={item} className="rounded-[6px] border border-white/20 bg-white/12 px-3 py-2 text-center text-sm font-extrabold leading-5 text-white backdrop-blur">
+                      {item}
+                    </span>
+                  ))}
+                </div>
+              </div>
             </Reveal>
             <Reveal delay={0.08}>
               <p className="eyebrow">One coordinated route</p>
@@ -335,10 +420,10 @@ export default function HomePage() {
             <Reveal delay={0.08}>
               <img
                 className="h-full max-h-[560px] w-full rounded-[8px] object-cover shadow-clean"
-                src={surveyImage}
-                alt="Asbestos survey equipment and protective gear"
-                width="1024"
-                height="683"
+                src={airTestingImage}
+                alt="Air monitoring equipment used during asbestos testing"
+                width="1500"
+                height="1128"
                 loading="lazy"
               />
             </Reveal>
@@ -385,11 +470,11 @@ export default function HomePage() {
           <div className="section-shell grid gap-10 lg:grid-cols-2 lg:items-center">
             <Reveal>
               <img
-                className="h-full max-h-[600px] w-full rounded-[8px] object-cover object-center shadow-clean"
-                src={aboutImage}
-                alt="Clearaway operative on site"
-                width="1200"
-                height="1600"
+                className="h-full max-h-[600px] w-full rounded-[8px] object-cover object-[46%_50%] shadow-clean"
+                src={brandedRoofImage}
+                alt="Clearaway operative working on site in branded protective clothing"
+                width="1500"
+                height="1016"
                 loading="lazy"
               />
             </Reveal>
