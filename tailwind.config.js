@@ -3,6 +3,9 @@ export default {
   content: ['./index.html', './src/**/*.{ts,tsx}'],
   theme: {
     extend: {
+      screens: {
+        xs: '420px',
+      },
       colors: {
         clearaway: {
           cyan: '#00A3EE',

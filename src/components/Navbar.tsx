@@ -40,20 +40,27 @@ export default function Navbar() {
       data-testid="site-navbar"
       data-scrolled={scrolled}
     >
-      <div className="section-shell flex min-h-[76px] items-center justify-between gap-4">
+      <div className="section-shell flex min-h-[68px] items-center justify-between gap-4">
         <a href="#top" className="flex min-h-11 items-center gap-3 text-clearaway-navy no-underline">
-          <img className="h-14 w-auto" src={logo} alt="Clearaway Services Ltd" width="269" height="222" />
-          <span className="hidden text-sm font-bold leading-5 sm:block">
-            <span className="block text-clearaway-greenDark">Demolition, Soft Strip</span>
-            <span className="block text-clearaway-blue">& Asbestos Removal</span>
+          <span className="grid h-11 w-11 place-items-center rounded-[8px] bg-white shadow-[0_8px_24px_rgba(9,3,77,0.1)] ring-1 ring-clearaway-line">
+            <img className="h-9 w-9 object-contain" src={logo} alt="Clearaway Services Ltd" width="269" height="222" />
+          </span>
+          <span className="hidden leading-none sm:block">
+            <span className="block text-[15px] font-extrabold leading-5 text-clearaway-blue">Clearaway Services</span>
+            <span className="block text-[11px] font-bold uppercase leading-4 text-clearaway-greenDark">
+              Asbestos · Strip-Out · Demolition
+            </span>
           </span>
         </a>
 
-        <nav className="hidden items-center gap-7 lg:flex" aria-label="Primary navigation">
+        <nav
+          className="hidden items-center gap-1 rounded-full bg-white/[0.72] p-1 ring-1 ring-clearaway-line/70 lg:flex"
+          aria-label="Primary navigation"
+        >
           {links.map((link) => (
             <a
               key={link.href}
-              className="text-sm font-semibold leading-5 text-slate-800 no-underline transition-colors duration-300 hover:text-clearaway-blue"
+              className="rounded-full px-3 py-2 text-sm font-semibold leading-5 text-slate-800 no-underline transition-colors duration-300 hover:bg-clearaway-mist hover:text-clearaway-blue"
               href={link.href}
             >
               {link.label}
@@ -61,17 +68,17 @@ export default function Navbar() {
           ))}
         </nav>
 
-        <div className="hidden items-center gap-3 lg:flex">
-          <a className="btn-secondary px-4" href="tel:02089414433">
-            <Phone aria-hidden="true" size={17} /> Call
+        <div className="hidden items-center gap-2 lg:flex">
+          <a className="btn-secondary px-3 py-2 text-sm" href="tel:02089414433">
+            <Phone aria-hidden="true" size={16} /> 020 8941 4433
           </a>
-          <a className="btn-primary px-4" href="#contact">
+          <a className="btn-primary px-4 py-2 text-sm" href="#contact">
             Get a quote
           </a>
         </div>
 
         <button
-          className="inline-flex min-h-11 min-w-11 items-center justify-center rounded-[6px] border border-clearaway-line bg-white text-clearaway-blue lg:hidden"
+          className="inline-flex min-h-11 min-w-11 items-center justify-center rounded-[8px] border border-clearaway-line bg-white text-clearaway-blue lg:hidden"
           type="button"
           aria-label="Open navigation menu"
           aria-expanded={open}
@@ -100,7 +107,12 @@ export default function Navbar() {
               transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
             >
               <div className="flex items-center justify-between">
-                <img className="h-14 w-auto" src={logo} alt="Clearaway Services Ltd" width="269" height="222" />
+                <div className="flex items-center gap-3">
+                  <span className="grid h-12 w-12 place-items-center rounded-[8px] bg-white ring-1 ring-clearaway-line">
+                    <img className="h-10 w-10 object-contain" src={logo} alt="Clearaway Services Ltd" width="269" height="222" />
+                  </span>
+                  <span className="text-base font-extrabold leading-5 text-clearaway-blue">Clearaway Services</span>
+                </div>
                 <button
                   className="inline-flex min-h-11 min-w-11 items-center justify-center rounded-[6px] border border-clearaway-line text-clearaway-blue"
                   type="button"

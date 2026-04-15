@@ -101,7 +101,12 @@ test.describe('Clearaway homepage preview', () => {
     await expect(bottomCta).toHaveCSS('opacity', '0')
     await page.evaluate(() => window.scrollTo(0, document.getElementById('hero-section')!.offsetHeight + 120))
     await expect(bottomCta).toHaveCSS('opacity', '1')
-    await expect(page.getByTestId('whatsapp-button')).toBeVisible()
+    const whatsapp = page.getByTestId('whatsapp-button')
+    await expect(whatsapp).toBeVisible()
+    const waBox = await whatsapp.boundingBox()
+    const ctaBox = await bottomCta.boundingBox()
+    expect(waBox && ctaBox && waBox.y + waBox.height <= ctaBox.y).toBeTruthy()
+    await page.screenshot({ path: 'tests/screenshots/preview-390-sticky-cta.png', fullPage: false })
 
     await warmLazyImages(page)
     await page.screenshot({ path: 'tests/screenshots/preview-390-iphone14.png', fullPage: true })

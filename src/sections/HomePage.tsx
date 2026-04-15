@@ -97,6 +97,13 @@ const processSteps = [
 
 const areas = ['London', 'Surrey', 'Chessington', 'Long Ditton', 'Surbiton', 'Kingston upon Thames', 'Epsom', 'Guildford']
 
+const socialLinks = [
+  { label: 'Facebook', href: 'https://www.facebook.com/Clearaway-Asbestos-Services-Ltd-106150131954705' },
+  { label: 'Instagram', href: 'https://www.instagram.com/clearawayasbestosservicesltd/?hl=en-gb' },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/company/clearaway-services-ltd' },
+  { label: 'X', href: 'https://twitter.com/ClearawayukLtd' },
+]
+
 export default function HomePage() {
   return (
     <div id="top" className="bg-white">
@@ -144,7 +151,7 @@ export default function HomePage() {
                   </a>
                 </div>
                 <div className="mt-8 grid gap-3 text-left sm:grid-cols-3">
-                  {['15+ years stated experience', 'HSE licensed asbestos work', '24/7 service stated online'].map(
+                  {['15+ years experience stated', 'HSE licensed asbestos work', '24/7 project support stated'].map(
                     (item) => (
                       <div key={item} className="rounded-[8px] border border-white/[0.18] bg-white/10 p-3 backdrop-blur">
                         <BadgeCheck aria-hidden="true" className="mb-2 text-clearaway-green" size={22} />
@@ -162,15 +169,17 @@ export default function HomePage() {
         </section>
 
         <section className="border-b border-clearaway-line bg-clearaway-mist py-6" aria-label="Trust signals">
-          <div className="section-shell grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="section-shell grid gap-3 rounded-[8px] border border-clearaway-line bg-white p-3 shadow-[0_14px_36px_rgba(9,3,77,0.06)] sm:grid-cols-2 lg:grid-cols-4">
             {[
               { icon: ShieldCheck, text: 'HSE licence stated for asbestos works' },
               { icon: Recycle, text: 'Waste carrier licence CBDU105333' },
               { icon: Clock3, text: '24 hours a day, 7 days a week' },
               { icon: BadgeCheck, text: 'Public and employer liability stated up to £10m' },
             ].map((item) => (
-              <div key={item.text} className="flex items-center gap-3 rounded-[8px] bg-white p-4">
-                <item.icon aria-hidden="true" className="shrink-0 text-clearaway-blue" size={24} />
+              <div key={item.text} className="flex items-center gap-3 rounded-[8px] px-3 py-3">
+                <span className="grid h-10 w-10 shrink-0 place-items-center rounded-[8px] bg-clearaway-mist text-clearaway-blue">
+                  <item.icon aria-hidden="true" size={21} />
+                </span>
                 <p className="text-sm font-bold leading-5 text-clearaway-navy">{item.text}</p>
               </div>
             ))}
@@ -217,9 +226,12 @@ export default function HomePage() {
                 <Reveal
                   key={service.title}
                   delay={index * 0.03}
-                  className="rounded-[8px] border border-clearaway-line bg-white p-6 shadow-[0_12px_34px_rgba(9,3,77,0.07)]"
+                  className="group relative overflow-hidden rounded-[8px] border border-clearaway-line bg-white p-6 shadow-[0_12px_34px_rgba(9,3,77,0.07)] transition-transform duration-300 hover:-translate-y-1"
                 >
-                  <service.icon aria-hidden="true" className="text-clearaway-blue" size={32} />
+                  <span className="absolute inset-x-0 top-0 h-1 bg-clearaway-cyan" aria-hidden="true" />
+                  <span className="grid h-12 w-12 place-items-center rounded-[8px] bg-clearaway-mist text-clearaway-blue">
+                    <service.icon aria-hidden="true" size={28} />
+                  </span>
                   <h3 className="mt-5 text-xl font-extrabold leading-7 text-clearaway-navy">{service.title}</h3>
                   <p className="mt-3 text-base leading-7 text-slate-600">{service.description}</p>
                   <p className="mt-4 border-l-4 border-clearaway-green pl-3 text-sm font-bold leading-6 text-clearaway-blue">
@@ -482,68 +494,112 @@ export default function HomePage() {
         </section>
       </main>
 
-      <footer className="bg-[#070431] pb-24 pt-14 text-white sm:pb-24">
-        <div className="section-shell grid gap-10 lg:grid-cols-[1.1fr_0.75fr_0.75fr_1fr]">
-          <div>
-            <img className="h-20 w-auto rounded-[8px] bg-white p-2" src={logo} alt="Clearaway Services Ltd" />
-            <p className="mt-5 max-w-sm text-base leading-7 text-white/[0.72]">
-              Licensed asbestos removal, surveys, air testing, demolition and soft strip-out support across London,
-              Surrey and the South East.
-            </p>
-          </div>
-          <div>
-            <h2 className="text-base font-extrabold leading-6">Explore</h2>
-            <nav className="mt-4 grid gap-2" aria-label="Footer navigation">
-              {['Services', 'Process', 'Proof', 'About', 'FAQ', 'Contact'].map((item) => (
-                <a key={item} className="min-h-11 py-2 text-white/[0.78] no-underline hover:text-white" href={`#${item.toLowerCase()}`}>
-                  {item}
-                </a>
-              ))}
-            </nav>
-          </div>
-          <div>
-            <h2 className="text-base font-extrabold leading-6">Services</h2>
-            <div className="mt-4 grid gap-2">
-              {services.slice(0, 5).map((service) => (
-                <a key={service.title} className="min-h-11 py-2 text-white/[0.78] no-underline hover:text-white" href="#services">
-                  {service.title}
-                </a>
-              ))}
+      <footer className="bg-[#070431] pb-28 pt-14 text-white sm:pb-24">
+        <div className="section-shell">
+          <div className="grid gap-6 rounded-[8px] border border-white/[0.12] bg-white/[0.045] p-5 shadow-[0_24px_60px_rgba(0,0,0,0.18)] sm:p-6 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+            <div className="flex flex-col gap-5 sm:flex-row sm:items-center">
+              <span className="grid h-16 w-16 shrink-0 place-items-center rounded-[8px] bg-white">
+                <img className="h-12 w-12 object-contain" src={logo} alt="Clearaway Services Ltd" />
+              </span>
+              <div>
+                <p className="text-sm font-bold uppercase leading-5 text-clearaway-cyan">Clearaway Services Ltd</p>
+                <h2 className="mt-1 text-2xl font-extrabold leading-8">Asbestos, strip-out and demolition support.</h2>
+                <p className="mt-2 max-w-2xl text-base leading-7 text-white/[0.72]">
+                  A practical route from asbestos risk to safe site handover across London, Surrey and the South East.
+                </p>
+              </div>
+            </div>
+            <div className="grid gap-3 sm:grid-cols-2">
+              <a className="btn-primary border-clearaway-cyanDark bg-clearaway-cyanDark" href="#contact">
+                Request a quote
+              </a>
+              <a className="btn-secondary border-white bg-white text-clearaway-blue" href="tel:02089414433">
+                Call 020 8941 4433
+              </a>
             </div>
           </div>
-          <div>
-            <h2 className="text-base font-extrabold leading-6">Contact</h2>
-            <div className="mt-4 grid gap-3 text-white/[0.78]">
-              <a className="min-h-11 text-white/[0.78] no-underline hover:text-white" href="tel:02089414433">
-                020 8941 4433
-              </a>
-              <a className="min-h-11 text-white/[0.78] no-underline hover:text-white" href="tel:08000246168">
-                080 0024 6168
-              </a>
+
+          <div className="mt-10 grid gap-8 md:grid-cols-2 lg:grid-cols-[0.8fr_1fr_1fr_1.15fr]">
+            <div>
+              <h2 className="text-sm font-extrabold uppercase leading-5 tracking-wide text-white">Trust cues</h2>
+              <div className="mt-4 grid gap-2 text-sm leading-6 text-white/[0.72]">
+                <p>Company Registration No. 10416600</p>
+                <p>Waste Carrier Licence No. CBDU105333</p>
+                <p>24/7 service stated online</p>
+              </div>
+            </div>
+            <div>
+              <h2 className="text-sm font-extrabold uppercase leading-5 tracking-wide text-white">Explore</h2>
+              <nav className="mt-3 grid grid-cols-2 gap-x-4 gap-y-1" aria-label="Footer navigation">
+                {['Services', 'Process', 'Proof', 'About', 'FAQ', 'Contact'].map((item) => (
+                  <a
+                    key={item}
+                    className="min-h-11 py-2 text-white/[0.76] no-underline hover:text-white"
+                    href={`#${item.toLowerCase()}`}
+                  >
+                    {item}
+                  </a>
+                ))}
+              </nav>
+            </div>
+            <div>
+              <h2 className="text-sm font-extrabold uppercase leading-5 tracking-wide text-white">Services</h2>
+              <div className="mt-3 grid gap-1">
+                {services.slice(0, 5).map((service) => (
+                  <a
+                    key={service.title}
+                    className="min-h-11 py-2 text-white/[0.76] no-underline hover:text-white"
+                    href="#services"
+                  >
+                    {service.title}
+                  </a>
+                ))}
+              </div>
+            </div>
+            <div>
+              <h2 className="text-sm font-extrabold uppercase leading-5 tracking-wide text-white">Contact</h2>
+              <div className="mt-3 grid gap-2 text-white/[0.76]">
+                <a className="min-h-11 py-2 text-white/[0.76] no-underline hover:text-white" href="tel:02089414433">
+                  020 8941 4433
+                </a>
+                <a className="min-h-11 py-2 text-white/[0.76] no-underline hover:text-white" href="tel:08000246168">
+                  080 0024 6168
+                </a>
+                <a
+                  className="min-h-11 py-2 text-white/[0.76] no-underline hover:text-white"
+                  href="mailto:info@clearawayservicesltd.co.uk"
+                >
+                  info@clearawayservicesltd.co.uk
+                </a>
+                <p className="leading-7">Chessington Business Centre, Chessington, KT9 1SD</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-8 flex flex-wrap gap-3 border-t border-white/[0.12] pt-6">
+            {socialLinks.map((link) => (
               <a
-                className="min-h-11 text-white/[0.78] no-underline hover:text-white"
-                href="https://api.whatsapp.com/send?phone=07768400475"
+                key={link.label}
+                className="rounded-[6px] border border-white/[0.14] px-3 py-2 text-sm font-bold leading-5 text-white/[0.76] no-underline hover:border-clearaway-cyan hover:text-white"
+                href={link.href}
                 target="_blank"
                 rel="noreferrer"
               >
-                WhatsApp 07768 400 475
+                {link.label}
               </a>
-              <a className="min-h-11 text-white/[0.78] no-underline hover:text-white" href="mailto:info@clearawayservicesltd.co.uk">
-                info@clearawayservicesltd.co.uk
-              </a>
-              <p className="leading-7">Chessington Business Centre, Chessington, KT9 1SD</p>
-            </div>
+            ))}
           </div>
-        </div>
-        <div className="section-shell mt-10 flex flex-col gap-3 border-t border-white/[0.12] pt-6 text-sm leading-6 text-white/[0.62] sm:flex-row sm:items-center sm:justify-between">
-          <p>© 2026 Clearaway Services Ltd. Company Registration No. 10416600.</p>
-          <div className="flex gap-4">
-            <a className="text-white/[0.62] hover:text-white" href="#top">
-              Privacy
-            </a>
-            <a className="text-white/[0.62] hover:text-white" href="#top">
-              Terms
-            </a>
+
+          <div className="mt-6 flex flex-col gap-3 text-sm leading-6 text-white/[0.62] sm:flex-row sm:items-center sm:justify-between">
+            <p>© 2026 Clearaway Services Ltd.</p>
+            <div className="flex gap-4">
+              <a className="text-white/[0.62] hover:text-white" href="#top">
+                Privacy
+              </a>
+              <a className="text-white/[0.62] hover:text-white" href="#top">
+                Terms
+              </a>
+            </div>
           </div>
         </div>
       </footer>
