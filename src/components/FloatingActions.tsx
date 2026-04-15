@@ -20,7 +20,7 @@ export default function FloatingActions() {
   return (
     <aside aria-label="Quick contact actions">
       <motion.a
-        href="https://api.whatsapp.com/send?phone=07768400475"
+        href="https://wa.me/447768400475"
         target="_blank"
         rel="noreferrer"
         aria-label="Contact us on WhatsApp"
