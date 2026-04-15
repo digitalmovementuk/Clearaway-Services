@@ -155,7 +155,7 @@ export default function HomePage() {
       <main id="main">
         <section
           id="hero-section"
-          className="relative min-h-[860px] overflow-hidden pt-28 text-white lg:min-h-[760px]"
+          className="relative min-h-[860px] overflow-hidden pt-28 text-white lg:min-h-[780px]"
           data-testid="hero"
         >
           <video
@@ -170,50 +170,45 @@ export default function HomePage() {
             aria-hidden="true"
             data-testid="hero-video"
           />
-          <div className="section-shell relative z-10 py-10 lg:py-14">
+          <div className="section-shell relative z-10 py-12 lg:py-20">
             <div className="hero-grid">
               <Reveal
-                className="mx-auto max-w-4xl rounded-[8px] bg-clearaway-navy/20 p-4 text-center shadow-[0_18px_60px_rgba(9,3,77,0.18)] backdrop-blur-[2px] sm:p-6 lg:mx-0 lg:flex lg:flex-col lg:gap-6 lg:bg-transparent lg:p-0 lg:text-left lg:shadow-none lg:backdrop-blur-0"
+                className="mx-auto max-w-4xl rounded-[8px] bg-clearaway-navy/20 p-4 text-center shadow-[0_18px_60px_rgba(9,3,77,0.18)] backdrop-blur-[2px] sm:p-6 lg:mx-0 lg:bg-transparent lg:p-0 lg:text-left lg:shadow-none lg:backdrop-blur-0"
                 data-testid="hero-copy"
               >
-                <div>
-                  <p className="inline-flex rounded-[6px] bg-white/[0.12] px-3 py-2 text-sm font-bold leading-5 text-white ring-1 ring-white/[0.22]">
-                    London, Surrey and the South East
-                  </p>
-                  <h1
-                    className="mt-5 text-4xl font-extrabold leading-[1.12] text-white sm:text-5xl sm:leading-[1.08] lg:text-[4rem] lg:leading-[1.01] xl:text-[4.35rem]"
-                    style={{ textShadow: '0 10px 32px rgba(9, 3, 77, 0.5)' }}
-                  >
-                    Licensed asbestos removal and strip-out without project drift.
-                  </h1>
-                  <p
-                    className="mt-5 max-w-[48rem] text-lg leading-8 text-white/[0.96] sm:text-[1.16rem] sm:leading-9 lg:text-[1.18rem] lg:leading-[2rem]"
-                    style={{ textShadow: '0 8px 26px rgba(9, 3, 77, 0.42)' }}
-                  >
-                    Clearaway Services supports contractors, developers and property managers with asbestos surveys, air
-                    testing, safe removal, demolition and soft strip-out work.
-                  </p>
-                  <div className="mt-7 flex flex-col justify-center gap-4 sm:flex-row lg:justify-start">
-                    <a className="btn-primary bg-clearaway-cyanDark hover:bg-clearaway-blue" href="#contact">
-                      Request a quote <ArrowRight aria-hidden="true" size={18} />
-                    </a>
-                    <a className="btn-secondary border-white/[0.45] bg-white/95 text-clearaway-blue" href="tel:02089414433">
-                      <Phone aria-hidden="true" size={18} /> 020 8941 4433
-                    </a>
-                  </div>
-                  <div className="mt-8 grid gap-3 text-left sm:grid-cols-3">
-                    {['15+ years experience stated', 'HSE licensed asbestos work', '24/7 project support stated'].map(
-                      (item) => (
-                        <div key={item} className="rounded-[8px] border border-white/[0.22] bg-clearaway-navy/24 p-3 backdrop-blur-sm">
-                          <BadgeCheck aria-hidden="true" className="mb-2 text-clearaway-green" size={20} />
-                          <p className="text-sm font-semibold leading-5 text-white lg:text-[0.95rem] lg:leading-6">{item}</p>
-                        </div>
-                      ),
-                    )}
-                  </div>
+                <p className="inline-flex rounded-[6px] bg-white/[0.12] px-3 py-2 text-sm font-bold leading-5 text-white ring-1 ring-white/[0.22]">
+                  London, Surrey and the South East
+                </p>
+                <h1
+                  className="mt-6 text-4xl font-extrabold leading-[1.12] text-white sm:text-5xl sm:leading-[1.08] lg:text-[4.55rem] lg:leading-[1.02]"
+                  style={{ textShadow: '0 10px 32px rgba(9, 3, 77, 0.5)' }}
+                >
+                  Licensed asbestos removal and strip-out without project drift.
+                </h1>
+                <p
+                  className="mt-6 max-w-[52rem] text-lg leading-8 text-white/[0.96] sm:text-[1.16rem] sm:leading-9 lg:text-[1.3rem] lg:leading-[2.25rem]"
+                  style={{ textShadow: '0 8px 26px rgba(9, 3, 77, 0.42)' }}
+                >
+                  Clearaway Services supports contractors, developers and property managers with asbestos surveys, air
+                  testing, safe removal, demolition and soft strip-out work.
+                </p>
+                <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row lg:justify-start">
+                  <a className="btn-primary bg-clearaway-cyanDark hover:bg-clearaway-blue" href="#contact">
+                    Request a quote <ArrowRight aria-hidden="true" size={18} />
+                  </a>
+                  <a className="btn-secondary border-white/[0.45] bg-white/95 text-clearaway-blue" href="tel:02089414433">
+                    <Phone aria-hidden="true" size={18} /> 020 8941 4433
+                  </a>
                 </div>
-                <div className="mx-auto w-full max-w-[820px] lg:mx-0 lg:max-w-[760px]">
-                  <TestimonialCarousel variant="hero" />
+                <div className="mt-10 grid gap-4 text-left sm:grid-cols-3">
+                  {['15+ years experience stated', 'HSE licensed asbestos work', '24/7 project support stated'].map(
+                    (item) => (
+                      <div key={item} className="rounded-[8px] border border-white/[0.24] bg-clearaway-navy/28 p-4 backdrop-blur-md">
+                        <BadgeCheck aria-hidden="true" className="mb-2 text-clearaway-green" size={22} />
+                        <p className="text-sm font-semibold leading-5 text-white lg:text-[1rem] lg:leading-6">{item}</p>
+                      </div>
+                    ),
+                  )}
                 </div>
               </Reveal>
               <Reveal className="mx-auto w-full max-w-[500px] lg:mx-0" delay={0.08} data-testid="hero-form">
@@ -444,29 +439,17 @@ export default function HomePage() {
         </section>
 
         <section id="proof" className="bg-clearaway-mist py-20 sm:py-24 lg:py-28">
-          <div className="section-shell">
-            <Reveal className="max-w-4xl">
+          <div className="section-shell grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+            <Reveal>
               <p className="eyebrow">Proof and reassurance</p>
               <h2 className="mt-3 text-3xl font-extrabold leading-tight text-clearaway-navy sm:text-[2.55rem] lg:text-[3rem] lg:leading-[1.08]">
                 Public trust cues without unsupported claims.
               </h2>
               <p className="mt-5 text-lg leading-8 text-slate-600 lg:text-[1.16rem] lg:leading-[2rem]">
-                The hero section now carries the public Google review excerpts and the live rating summary visible for
-                Clearaway Asbestos. This section keeps the rest of the trust picture grounded in public business details
-                and source-visible credentials.
+                Public Google review text was not safely accessible during research, so this preview uses short excerpts
+                from testimonials visible on Clearaway’s own website and factual trust markers found there.
               </p>
-              <div className="mt-8 grid gap-4 sm:grid-cols-3">
-                {[
-                  'Google rating shown in the hero is 5.0 based on 6 reviews.',
-                  'Reviewer names and excerpts are taken from the visible Google review list.',
-                  'Trust logos below reflect sources visible on the existing website.',
-                ].map((item) => (
-                  <div key={item} className="rounded-[8px] border border-clearaway-line bg-white p-5">
-                    <p className="font-semibold leading-7 text-clearaway-navy">{item}</p>
-                  </div>
-                ))}
-              </div>
-              <div className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-4">
+              <div className="mt-7 grid grid-cols-2 gap-4 sm:grid-cols-4">
                 {[
                   { src: hseLogo, width: 155, height: 125, alt: 'Health and Safety Executive logo' },
                   { src: scopesLogo, width: 203, height: 100, alt: 'Public trust logo from Clearaway website' },
@@ -484,6 +467,9 @@ export default function HomePage() {
                   </div>
                 ))}
               </div>
+            </Reveal>
+            <Reveal delay={0.08}>
+              <TestimonialCarousel />
             </Reveal>
           </div>
         </section>
