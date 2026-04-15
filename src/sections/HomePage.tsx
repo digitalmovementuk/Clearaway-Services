@@ -31,10 +31,10 @@ import scopesLogo from '../assets/images/scopes-logo.jpg'
 import spectraLogo from '../assets/images/spectra-site-logo.png'
 import lsslLogo from '../assets/images/lssl.jpg'
 import logo from '../assets/images/clearaway-logo.png'
+import heroVideo from '../assets/videos/clearaway-hero-web.mp4'
 
 const baseUrl = import.meta.env.BASE_URL
 const heroImage = `${baseUrl}hero-clearaway-work-1400.jpg`
-const heroSrcSet = `${baseUrl}hero-clearaway-work-640.jpg 640w, ${baseUrl}hero-clearaway-work-900.jpg 780w, ${baseUrl}hero-clearaway-work-1400.jpg 1050w`
 
 const services = [
   {
@@ -158,19 +158,24 @@ export default function HomePage() {
           className="relative min-h-[860px] overflow-hidden pt-28 text-white lg:min-h-[780px]"
           data-testid="hero"
         >
-          <img
-            className="absolute inset-0 h-full w-full object-cover object-[54%_50%]"
-            src={heroImage}
-            srcSet={heroSrcSet}
-            sizes="100vw"
-            alt="Clearaway operative collecting an asbestos sample inside a commercial building"
-            width="1100"
-            height="745"
-            fetchPriority="high"
+          <video
+            className="absolute inset-0 h-full w-full object-cover object-center"
+            src={heroVideo}
+            poster={heroImage}
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            aria-hidden="true"
+            data-testid="hero-video"
           />
-          <div className="absolute inset-0 bg-clearaway-navy/[0.58]" aria-hidden="true" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_72%_45%,rgba(0,163,238,0.22),transparent_32%),linear-gradient(90deg,rgba(9,3,77,0.86)_0%,rgba(9,3,77,0.68)_44%,rgba(9,3,77,0.36)_100%)]" aria-hidden="true" />
-          <div className="absolute inset-x-0 top-0 h-36 bg-white/[0.12]" aria-hidden="true" />
+          <div className="absolute inset-0 bg-clearaway-navy/[0.66]" aria-hidden="true" />
+          <div
+            className="absolute inset-0 bg-[radial-gradient(circle_at_70%_40%,rgba(0,163,238,0.16),transparent_34%),linear-gradient(90deg,rgba(9,3,77,0.92)_0%,rgba(9,3,77,0.78)_42%,rgba(9,3,77,0.54)_100%)]"
+            aria-hidden="true"
+          />
+          <div className="absolute inset-x-0 top-0 h-36 bg-white/[0.09]" aria-hidden="true" />
           <div className="section-shell relative z-10 py-12 lg:py-16">
             <div className="hero-grid">
               <Reveal className="mx-auto max-w-3xl text-center lg:mx-0 lg:text-left" data-testid="hero-copy">
