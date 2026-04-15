@@ -75,27 +75,27 @@ export default function Navbar() {
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'border-b border-white/60 bg-white/[0.82] shadow-[0_10px_35px_rgba(9,3,77,0.12)] backdrop-blur-xl'
-          : 'bg-white/[0.94]'
+          ? 'border-b border-white/65 bg-white/[0.8] shadow-[0_12px_34px_rgba(9,3,77,0.12)] backdrop-blur-2xl'
+          : 'bg-white/[0.92]'
       }`}
       data-testid="site-navbar"
       data-scrolled={scrolled}
     >
       <div className="section-shell flex min-h-[68px] items-center justify-between gap-3">
-        <a href="#top" className="flex min-h-11 items-center gap-3 text-clearaway-navy no-underline">
-          <span className="grid h-11 w-11 place-items-center rounded-[8px] bg-white shadow-[0_8px_24px_rgba(9,3,77,0.1)] ring-1 ring-clearaway-line">
-            <img className="h-9 w-9 object-contain" src={logo} alt="Clearaway Services Ltd" width="269" height="222" />
+        <a href="#top" className="flex min-h-11 items-center gap-3.5 text-clearaway-navy no-underline">
+          <span className="grid h-11 w-11 place-items-center rounded-[8px] bg-white/[0.9] shadow-[0_10px_24px_rgba(9,3,77,0.08)] ring-1 ring-white/80 backdrop-blur-sm">
+            <img className="h-8 w-8 object-contain" src={logo} alt="Clearaway Services Ltd" width="269" height="222" />
           </span>
           <span className="hidden leading-none sm:block">
-            <span className="block text-[15px] font-extrabold leading-5 text-clearaway-blue">Clearaway Services</span>
-            <span className="block text-[11px] font-bold uppercase leading-4 text-clearaway-greenDark">
+            <span className="block text-[15px] font-black leading-[1.1] text-clearaway-navy">Clearaway Services</span>
+            <span className="mt-1 block text-[11px] font-semibold uppercase leading-4 text-clearaway-greenDark/90">
               Asbestos · Strip-Out · Demolition
             </span>
           </span>
         </a>
 
         <nav
-          className="hidden items-center gap-1 rounded-full bg-white/[0.72] p-1 ring-1 ring-clearaway-line/70 lg:flex"
+          className="hidden items-center gap-1 rounded-full bg-white/[0.74] p-1 ring-1 ring-clearaway-line/75 shadow-[0_8px_22px_rgba(9,3,77,0.06)] lg:flex"
           aria-label="Primary navigation"
         >
           {links.map((link) => (
@@ -109,12 +109,15 @@ export default function Navbar() {
           ))}
         </nav>
 
-        <div className="hidden items-center gap-2 lg:flex">
-          <div className="flex items-center gap-2" aria-label="Social links">
+        <div className="hidden items-center gap-2.5 lg:flex">
+          <div
+            className="flex items-center gap-1 rounded-full bg-white/[0.86] px-1.5 py-1 ring-1 ring-clearaway-line/75 shadow-[0_8px_22px_rgba(9,3,77,0.06)]"
+            aria-label="Social links"
+          >
             {socialLinks.map((link) => (
               <a
                 key={link.label}
-                className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-clearaway-line/80 bg-white/[0.88] text-clearaway-navy transition-colors duration-300 hover:border-clearaway-cyan hover:text-clearaway-blue"
+                className="inline-flex h-9 w-9 items-center justify-center rounded-full text-clearaway-navy transition-colors duration-300 hover:bg-clearaway-mist hover:text-clearaway-blue"
                 href={link.href}
                 target="_blank"
                 rel="noreferrer"
@@ -134,11 +137,14 @@ export default function Navbar() {
         </div>
 
         <div className="flex items-center gap-2 lg:hidden">
-          <div className="flex items-center gap-1.5" aria-label="Social links">
+          <div
+            className="flex items-center gap-1 rounded-full bg-white/[0.92] px-1.5 py-1 ring-1 ring-clearaway-line/80 shadow-[0_8px_18px_rgba(9,3,77,0.06)]"
+            aria-label="Social links"
+          >
             {socialLinks.map((link) => (
               <a
                 key={link.label}
-                className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-clearaway-line bg-white text-clearaway-navy transition-colors duration-300 hover:border-clearaway-cyan hover:text-clearaway-blue"
+                className="inline-flex h-8 w-8 items-center justify-center rounded-full text-clearaway-navy transition-colors duration-300 hover:bg-clearaway-mist hover:text-clearaway-blue"
                 href={link.href}
                 target="_blank"
                 rel="noreferrer"
@@ -181,10 +187,15 @@ export default function Navbar() {
             >
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
-                  <span className="grid h-12 w-12 place-items-center rounded-[8px] bg-white ring-1 ring-clearaway-line">
-                    <img className="h-10 w-10 object-contain" src={logo} alt="Clearaway Services Ltd" width="269" height="222" />
+                  <span className="grid h-12 w-12 place-items-center rounded-[8px] bg-white shadow-[0_8px_22px_rgba(9,3,77,0.06)] ring-1 ring-clearaway-line/80">
+                    <img className="h-9 w-9 object-contain" src={logo} alt="Clearaway Services Ltd" width="269" height="222" />
                   </span>
-                  <span className="text-base font-extrabold leading-5 text-clearaway-blue">Clearaway Services</span>
+                  <div>
+                    <span className="block text-base font-black leading-5 text-clearaway-navy">Clearaway Services</span>
+                    <span className="mt-1 block text-[11px] font-semibold uppercase leading-4 text-clearaway-greenDark/90">
+                      Asbestos · Strip-Out · Demolition
+                    </span>
+                  </div>
                 </div>
                 <button
                   className="inline-flex min-h-11 min-w-11 items-center justify-center rounded-[6px] border border-clearaway-line text-clearaway-blue"
