@@ -1,0 +1,553 @@
+import {
+  ArrowRight,
+  BadgeCheck,
+  Building2,
+  ClipboardCheck,
+  Clock3,
+  Factory,
+  HardHat,
+  MapPin,
+  Phone,
+  Recycle,
+  ShieldCheck,
+  Sparkles,
+} from 'lucide-react'
+import ContactForm from '../components/ContactForm'
+import Faq from '../components/Faq'
+import FloatingActions from '../components/FloatingActions'
+import Navbar from '../components/Navbar'
+import Reveal from '../components/Reveal'
+import TestimonialCarousel from '../components/TestimonialCarousel'
+import surveyImage from '../assets/images/asbestos-survey.jpg'
+import demolitionImage from '../assets/images/demolition-building.jpg'
+import aboutImage from '../assets/images/about-team-900.jpeg'
+import hseLogo from '../assets/images/hse-logo.jpg'
+import scopesLogo from '../assets/images/scopes-logo.jpg'
+import spectraLogo from '../assets/images/spectra-site-logo.png'
+import lsslLogo from '../assets/images/lssl.jpg'
+import logo from '../assets/images/clearaway-logo.png'
+
+const baseUrl = import.meta.env.BASE_URL
+const heroImage = `${baseUrl}hero-clearaway-1400.jpg`
+const heroSrcSet = `${baseUrl}hero-clearaway-900.jpg 900w, ${baseUrl}hero-clearaway-1400.jpg 1400w`
+
+const services = [
+  {
+    title: 'Asbestos Removal',
+    description:
+      'Careful containment, handling and disposal for commercial premises, industrial estates, demolition sites and outbuildings.',
+    benefit: 'Protect people and keep works moving under a controlled plan.',
+    icon: ShieldCheck,
+  },
+  {
+    title: 'Asbestos Surveys',
+    description:
+      'Management surveys and refurbishment or demolition surveys for buildings where asbestos may be present or disturbed.',
+    benefit: 'Get clear reporting before maintenance, fit-out or demolition starts.',
+    icon: ClipboardCheck,
+  },
+  {
+    title: 'Air Testing & Monitoring',
+    description:
+      'Background, leak, reassurance and personal monitoring, plus four-stage clearance testing for reoccupation.',
+    benefit: 'Evidence air quality and clearance at the moments that matter.',
+    icon: Sparkles,
+  },
+  {
+    title: 'Soft Strip Out',
+    description:
+      'Internal strip-outs, tenancy make-goods and dismantling for offices, retail units, warehouses and refurbishments.',
+    benefit: 'Prepare spaces for the next phase with less disruption.',
+    icon: Building2,
+  },
+  {
+    title: 'Demolition & Excavation',
+    description:
+      'Controlled demolition and excavation support with experienced supervision and practical site management.',
+    benefit: 'A safer route through complex or time-sensitive dismantling.',
+    icon: HardHat,
+  },
+  {
+    title: 'Building & Office Strip Outs',
+    description:
+      'Removal of partition walls, floor coverings, ceilings, mechanical systems, utilities and plant-room items.',
+    benefit: 'One coordinated team for the heavy internal work.',
+    icon: Factory,
+  },
+]
+
+const processSteps = [
+  {
+    title: 'Tell us what is happening on site',
+    text: 'Share the location, building type, timescale, suspected materials and any access limits.',
+  },
+  {
+    title: 'Survey, test or scope the works',
+    text: 'Clearaway identifies the right starting point, from sampling and air testing to strip-out planning.',
+  },
+  {
+    title: 'Plan the safe method',
+    text: 'The team aligns the work around safety, HSE requirements, site rules, noise windows and waste routes.',
+  },
+  {
+    title: 'Complete, clear and hand back',
+    text: 'Works are managed through completion so the next contractor, tenant or project phase can proceed.',
+  },
+]
+
+const areas = ['London', 'Surrey', 'Chessington', 'Long Ditton', 'Surbiton', 'Kingston upon Thames', 'Epsom', 'Guildford']
+
+export default function HomePage() {
+  return (
+    <div id="top" className="bg-white">
+      <a className="skip-link" href="#main">
+        Skip to content
+      </a>
+      <Navbar />
+      <main id="main">
+        <section
+          id="hero-section"
+          className="relative min-h-[860px] overflow-hidden pt-28 text-white lg:min-h-[780px]"
+          data-testid="hero"
+        >
+          <img
+            className="absolute inset-0 h-full w-full object-cover"
+            src={heroImage}
+            srcSet={heroSrcSet}
+            sizes="100vw"
+            alt="Asbestos safety equipment and protective materials"
+            width="1400"
+            height="933"
+            fetchPriority="high"
+          />
+          <div className="absolute inset-0 bg-clearaway-navy/[0.78]" aria-hidden="true" />
+          <div className="absolute inset-x-0 top-0 h-36 bg-white/[0.18]" aria-hidden="true" />
+          <div className="section-shell relative z-10 py-12 lg:py-16">
+            <div className="hero-grid">
+              <Reveal className="mx-auto max-w-3xl text-center lg:mx-0 lg:text-left" data-testid="hero-copy">
+                <p className="inline-flex rounded-[6px] bg-white/[0.12] px-3 py-2 text-sm font-bold leading-5 text-white ring-1 ring-white/[0.22]">
+                  London, Surrey and the South East
+                </p>
+                <h1 className="mt-6 text-4xl font-extrabold leading-[1.12] text-white sm:text-5xl sm:leading-[1.1] lg:text-6xl lg:leading-[1.06]">
+                  Licensed asbestos removal and strip-out without project drift.
+                </h1>
+                <p className="mt-5 max-w-2xl text-lg leading-8 text-white/[0.88] lg:text-xl lg:leading-9">
+                  Clearaway Services supports contractors, developers and property managers with asbestos surveys, air
+                  testing, safe removal, demolition and soft strip-out work.
+                </p>
+                <div className="mt-7 flex flex-col justify-center gap-3 sm:flex-row lg:justify-start">
+                  <a className="btn-primary bg-clearaway-cyanDark hover:bg-clearaway-blue" href="#contact">
+                    Request a quote <ArrowRight aria-hidden="true" size={18} />
+                  </a>
+                  <a className="btn-secondary border-white/[0.45] bg-white/95 text-clearaway-blue" href="tel:02089414433">
+                    <Phone aria-hidden="true" size={18} /> 020 8941 4433
+                  </a>
+                </div>
+                <div className="mt-8 grid gap-3 text-left sm:grid-cols-3">
+                  {['15+ years stated experience', 'HSE licensed asbestos work', '24/7 service stated online'].map(
+                    (item) => (
+                      <div key={item} className="rounded-[8px] border border-white/[0.18] bg-white/10 p-3 backdrop-blur">
+                        <BadgeCheck aria-hidden="true" className="mb-2 text-clearaway-green" size={22} />
+                        <p className="text-sm font-semibold leading-5 text-white">{item}</p>
+                      </div>
+                    ),
+                  )}
+                </div>
+              </Reveal>
+              <Reveal className="mx-auto w-full max-w-[460px] lg:mx-0" delay={0.08} data-testid="hero-form">
+                <ContactForm label="Hero project enquiry form" />
+              </Reveal>
+            </div>
+          </div>
+        </section>
+
+        <section className="border-b border-clearaway-line bg-clearaway-mist py-6" aria-label="Trust signals">
+          <div className="section-shell grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {[
+              { icon: ShieldCheck, text: 'HSE licence stated for asbestos works' },
+              { icon: Recycle, text: 'Waste carrier licence CBDU105333' },
+              { icon: Clock3, text: '24 hours a day, 7 days a week' },
+              { icon: BadgeCheck, text: 'Public and employer liability stated up to £10m' },
+            ].map((item) => (
+              <div key={item.text} className="flex items-center gap-3 rounded-[8px] bg-white p-4">
+                <item.icon aria-hidden="true" className="shrink-0 text-clearaway-blue" size={24} />
+                <p className="text-sm font-bold leading-5 text-clearaway-navy">{item.text}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="py-20 sm:py-24">
+          <div className="section-shell grid gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:items-center">
+            <Reveal>
+              <p className="eyebrow">Control before disruption</p>
+              <h2 className="mt-3 text-3xl font-extrabold leading-tight text-clearaway-navy sm:text-4xl">
+                Refurbishment and demolition work gets expensive when asbestos risk is unclear.
+              </h2>
+            </Reveal>
+            <Reveal delay={0.08}>
+              <div className="grid gap-5 text-lg leading-8 text-slate-600">
+                <p>
+                  Contractors and property teams need fast answers, safe working methods and clear communication before
+                  work starts opening up a building.
+                </p>
+                <p>
+                  Clearaway’s current service mix is strongest where asbestos compliance and strip-out planning overlap:
+                  surveys, testing, removal, dismantling, waste handling and practical site coordination.
+                </p>
+              </div>
+            </Reveal>
+          </div>
+        </section>
+
+        <section id="services" className="bg-clearaway-mist py-20 sm:py-24">
+          <div className="section-shell">
+            <Reveal className="max-w-3xl">
+              <p className="eyebrow">Services</p>
+              <h2 className="mt-3 text-3xl font-extrabold leading-tight text-clearaway-navy sm:text-4xl">
+                Specialist asbestos, demolition and soft strip-out services.
+              </h2>
+              <p className="mt-4 text-lg leading-8 text-slate-600">
+                The offer is built around commercial and industrial sites that need safety, speed and compliance to line
+                up.
+              </p>
+            </Reveal>
+            <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+              {services.map((service, index) => (
+                <Reveal
+                  key={service.title}
+                  delay={index * 0.03}
+                  className="rounded-[8px] border border-clearaway-line bg-white p-6 shadow-[0_12px_34px_rgba(9,3,77,0.07)]"
+                >
+                  <service.icon aria-hidden="true" className="text-clearaway-blue" size={32} />
+                  <h3 className="mt-5 text-xl font-extrabold leading-7 text-clearaway-navy">{service.title}</h3>
+                  <p className="mt-3 text-base leading-7 text-slate-600">{service.description}</p>
+                  <p className="mt-4 border-l-4 border-clearaway-green pl-3 text-sm font-bold leading-6 text-clearaway-blue">
+                    {service.benefit}
+                  </p>
+                  <a className="mt-5 inline-flex min-h-11 items-center font-bold text-clearaway-blue" href="#contact">
+                    Ask about {service.title.toLowerCase()} <ArrowRight aria-hidden="true" className="ml-2" size={17} />
+                  </a>
+                </Reveal>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="py-20 sm:py-24">
+          <div className="section-shell grid gap-10 lg:grid-cols-2 lg:items-center">
+            <Reveal>
+              <img
+                className="h-full max-h-[560px] w-full rounded-[8px] object-cover shadow-clean"
+                src={demolitionImage}
+                alt="Demolition and strip-out machinery on site"
+                width="715"
+                height="515"
+                loading="lazy"
+              />
+            </Reveal>
+            <Reveal delay={0.08}>
+              <p className="eyebrow">One coordinated route</p>
+              <h2 className="mt-3 text-3xl font-extrabold leading-tight text-clearaway-navy sm:text-4xl">
+                From asbestos survey to safe strip-out and handover.
+              </h2>
+              <p className="mt-5 text-lg leading-8 text-slate-600">
+                Clearaway’s existing positioning highlights a one-stop approach: asbestos survey, asbestos removal and
+                soft strip demolition managed through a single contractor.
+              </p>
+              <div className="mt-7 grid gap-4 sm:grid-cols-2">
+                {['Single point of contact', 'Controlled dismantling', 'Recycling where possible', 'Minimal disruption'].map(
+                  (item) => (
+                    <div key={item} className="rounded-[8px] border border-clearaway-line p-4">
+                      <BadgeCheck aria-hidden="true" className="mb-2 text-clearaway-greenDark" />
+                      <p className="font-bold leading-6 text-clearaway-navy">{item}</p>
+                    </div>
+                  ),
+                )}
+              </div>
+            </Reveal>
+          </div>
+        </section>
+
+        <section id="process" className="bg-clearaway-navy py-20 text-white sm:py-24">
+          <div className="section-shell">
+            <Reveal className="max-w-3xl">
+              <p className="font-bold uppercase leading-5 text-clearaway-cyan">How it works</p>
+              <h2 className="mt-3 text-3xl font-extrabold leading-tight sm:text-4xl">
+                A practical path from first call to site clearance.
+              </h2>
+            </Reveal>
+            <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+              {processSteps.map((step, index) => (
+                <Reveal
+                  key={step.title}
+                  delay={index * 0.05}
+                  className="rounded-[8px] border border-white/[0.14] bg-white/[0.08] p-6"
+                >
+                  <span className="grid h-11 w-11 place-items-center rounded-[6px] bg-clearaway-cyanDark text-lg font-extrabold">
+                    {index + 1}
+                  </span>
+                  <h3 className="mt-5 text-xl font-extrabold leading-7">{step.title}</h3>
+                  <p className="mt-3 text-base leading-7 text-white/[0.78]">{step.text}</p>
+                </Reveal>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="py-20 sm:py-24">
+          <div className="section-shell grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
+            <Reveal>
+              <p className="eyebrow">Why Clearaway</p>
+              <h2 className="mt-3 text-3xl font-extrabold leading-tight text-clearaway-navy sm:text-4xl">
+                Built for live sites, sensitive buildings and strict deadlines.
+              </h2>
+              <p className="mt-5 text-lg leading-8 text-slate-600">
+                The current site places emphasis on trained operatives, CSCS demolition specialist cards, HSE standards,
+                risk assessments, recycling and adapting work around site restrictions.
+              </p>
+              <div className="mt-8 grid gap-4 sm:grid-cols-2">
+                {[
+                  'Fully trained operatives stated online',
+                  'Detailed risk assessments',
+                  'Noise and dust control focus',
+                  'Environmental approach to waste',
+                ].map((item) => (
+                  <div key={item} className="flex items-start gap-3">
+                    <BadgeCheck aria-hidden="true" className="mt-1 shrink-0 text-clearaway-greenDark" size={22} />
+                    <p className="font-semibold leading-7 text-clearaway-ink">{item}</p>
+                  </div>
+                ))}
+              </div>
+            </Reveal>
+            <Reveal delay={0.08}>
+              <img
+                className="h-full max-h-[560px] w-full rounded-[8px] object-cover shadow-clean"
+                src={surveyImage}
+                alt="Asbestos survey equipment and protective gear"
+                width="1024"
+                height="683"
+                loading="lazy"
+              />
+            </Reveal>
+          </div>
+        </section>
+
+        <section id="proof" className="bg-clearaway-mist py-20 sm:py-24">
+          <div className="section-shell grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+            <Reveal>
+              <p className="eyebrow">Proof and reassurance</p>
+              <h2 className="mt-3 text-3xl font-extrabold leading-tight text-clearaway-navy sm:text-4xl">
+                Public trust cues without unsupported claims.
+              </h2>
+              <p className="mt-5 text-lg leading-8 text-slate-600">
+                Public Google review text was not safely accessible during research, so this preview uses short excerpts
+                from testimonials visible on Clearaway’s own website and factual trust markers found there.
+              </p>
+              <div className="mt-7 grid grid-cols-2 gap-4 sm:grid-cols-4">
+                {[
+                  { src: hseLogo, width: 155, height: 125, alt: 'Health and Safety Executive logo' },
+                  { src: scopesLogo, width: 203, height: 100, alt: 'Public trust logo from Clearaway website' },
+                  { src: spectraLogo, width: 288, height: 70, alt: 'Public trust logo from Clearaway website' },
+                  { src: lsslLogo, width: 1181, height: 578, alt: 'Public trust logo from Clearaway website' },
+                ].map((trustLogo) => (
+                  <div key={trustLogo.src} className="grid min-h-24 place-items-center rounded-[8px] bg-white p-3">
+                    <img
+                      src={trustLogo.src}
+                      alt={trustLogo.alt}
+                      width={trustLogo.width}
+                      height={trustLogo.height}
+                      loading="lazy"
+                    />
+                  </div>
+                ))}
+              </div>
+            </Reveal>
+            <Reveal delay={0.08}>
+              <TestimonialCarousel />
+            </Reveal>
+          </div>
+        </section>
+
+        <section id="about" className="py-20 sm:py-24">
+          <div className="section-shell grid gap-10 lg:grid-cols-2 lg:items-center">
+            <Reveal>
+              <img
+                className="h-full max-h-[600px] w-full rounded-[8px] object-cover object-center shadow-clean"
+                src={aboutImage}
+                alt="Clearaway operative on site"
+                width="1200"
+                height="1600"
+                loading="lazy"
+              />
+            </Reveal>
+            <Reveal delay={0.08}>
+              <p className="eyebrow">About Clearaway Services</p>
+              <h2 className="mt-3 text-3xl font-extrabold leading-tight text-clearaway-navy sm:text-4xl">
+                Surrey-based specialists serving London and the South East.
+              </h2>
+              <p className="mt-5 text-lg leading-8 text-slate-600">
+                Clearaway describes itself as an experienced, friendly and professional team for soft building strip-out,
+                internal demolition, waste removal and asbestos services.
+              </p>
+              <p className="mt-4 text-lg leading-8 text-slate-600">
+                The brand’s strongest message is practical confidence: trained people, compliant processes and a team
+                that can help whether the work is a targeted strip-out or a larger commercial programme.
+              </p>
+              <a className="btn-primary mt-8" href="#contact">
+                Talk through your site <ArrowRight aria-hidden="true" size={18} />
+              </a>
+            </Reveal>
+          </div>
+        </section>
+
+        <section id="contact" className="bg-clearaway-mist py-20 sm:py-24">
+          <div className="section-shell grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
+            <Reveal>
+              <p className="eyebrow">Contact and service area</p>
+              <h2 className="mt-3 text-3xl font-extrabold leading-tight text-clearaway-navy sm:text-4xl">
+                Speak to the team about access, asbestos risk and next steps.
+              </h2>
+              <div className="mt-8 grid gap-4">
+                <a className="flex items-center gap-3 rounded-[8px] bg-white p-4 font-bold text-clearaway-blue no-underline" href="tel:02089414433">
+                  <Phone aria-hidden="true" /> 020 8941 4433
+                </a>
+                <a className="flex items-center gap-3 rounded-[8px] bg-white p-4 font-bold text-clearaway-blue no-underline" href="tel:08000246168">
+                  <Phone aria-hidden="true" /> 080 0024 6168
+                </a>
+                <a
+                  className="flex items-center gap-3 rounded-[8px] bg-white p-4 font-bold text-clearaway-blue no-underline"
+                  href="mailto:info@clearawayservicesltd.co.uk"
+                >
+                  <ClipboardCheck aria-hidden="true" /> info@clearawayservicesltd.co.uk
+                </a>
+                <div className="rounded-[8px] bg-white p-4">
+                  <div className="flex gap-3">
+                    <MapPin aria-hidden="true" className="shrink-0 text-clearaway-blue" />
+                    <p className="font-semibold leading-7 text-clearaway-ink">
+                      Chessington Business Centre, Chessington, KT9 1SD
+                      <br />
+                      Ditton House, 59 Fleece Road, Long Ditton, Surbiton, Surrey, KT6 5JR
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div className="mt-6 flex flex-wrap gap-2">
+                {areas.map((area) => (
+                  <span key={area} className="rounded-[6px] bg-white px-3 py-2 text-sm font-bold text-clearaway-navy">
+                    {area}
+                  </span>
+                ))}
+              </div>
+            </Reveal>
+            <Reveal delay={0.08}>
+              <ContactForm label="Contact section project enquiry form" />
+            </Reveal>
+          </div>
+        </section>
+
+        <section id="faq" className="py-20 sm:py-24">
+          <div className="section-shell grid gap-10 lg:grid-cols-[0.85fr_1.15fr]">
+            <Reveal>
+              <p className="eyebrow">FAQ</p>
+              <h2 className="mt-3 text-3xl font-extrabold leading-tight text-clearaway-navy sm:text-4xl">
+                Common questions before the first call.
+              </h2>
+              <p className="mt-5 text-lg leading-8 text-slate-600">
+                The safest starting point is a quick conversation about what is known, what is suspected and what the
+                next trade needs from the building.
+              </p>
+            </Reveal>
+            <Reveal delay={0.08}>
+              <Faq />
+            </Reveal>
+          </div>
+        </section>
+
+        <section className="bg-clearaway-blue py-14 text-white">
+          <div className="section-shell flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
+            <div>
+              <p className="text-sm font-bold uppercase leading-5 text-white/[0.78]">Ready to plan the next step?</p>
+              <h2 className="mt-2 text-3xl font-extrabold leading-tight">Get a clear route for your site.</h2>
+            </div>
+            <div className="flex flex-col gap-3 sm:flex-row">
+              <a className="btn-secondary border-white bg-white text-clearaway-blue" href="#contact">
+                Request a quote
+              </a>
+              <a className="btn-primary border-clearaway-navy bg-clearaway-navy" href="tel:02089414433">
+                Call 020 8941 4433
+              </a>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer className="bg-[#070431] pb-24 pt-14 text-white sm:pb-24">
+        <div className="section-shell grid gap-10 lg:grid-cols-[1.1fr_0.75fr_0.75fr_1fr]">
+          <div>
+            <img className="h-20 w-auto rounded-[8px] bg-white p-2" src={logo} alt="Clearaway Services Ltd" />
+            <p className="mt-5 max-w-sm text-base leading-7 text-white/[0.72]">
+              Licensed asbestos removal, surveys, air testing, demolition and soft strip-out support across London,
+              Surrey and the South East.
+            </p>
+          </div>
+          <div>
+            <h2 className="text-base font-extrabold leading-6">Explore</h2>
+            <nav className="mt-4 grid gap-2" aria-label="Footer navigation">
+              {['Services', 'Process', 'Proof', 'About', 'FAQ', 'Contact'].map((item) => (
+                <a key={item} className="min-h-11 py-2 text-white/[0.78] no-underline hover:text-white" href={`#${item.toLowerCase()}`}>
+                  {item}
+                </a>
+              ))}
+            </nav>
+          </div>
+          <div>
+            <h2 className="text-base font-extrabold leading-6">Services</h2>
+            <div className="mt-4 grid gap-2">
+              {services.slice(0, 5).map((service) => (
+                <a key={service.title} className="min-h-11 py-2 text-white/[0.78] no-underline hover:text-white" href="#services">
+                  {service.title}
+                </a>
+              ))}
+            </div>
+          </div>
+          <div>
+            <h2 className="text-base font-extrabold leading-6">Contact</h2>
+            <div className="mt-4 grid gap-3 text-white/[0.78]">
+              <a className="min-h-11 text-white/[0.78] no-underline hover:text-white" href="tel:02089414433">
+                020 8941 4433
+              </a>
+              <a className="min-h-11 text-white/[0.78] no-underline hover:text-white" href="tel:08000246168">
+                080 0024 6168
+              </a>
+              <a
+                className="min-h-11 text-white/[0.78] no-underline hover:text-white"
+                href="https://api.whatsapp.com/send?phone=07768400475"
+                target="_blank"
+                rel="noreferrer"
+              >
+                WhatsApp 07768 400 475
+              </a>
+              <a className="min-h-11 text-white/[0.78] no-underline hover:text-white" href="mailto:info@clearawayservicesltd.co.uk">
+                info@clearawayservicesltd.co.uk
+              </a>
+              <p className="leading-7">Chessington Business Centre, Chessington, KT9 1SD</p>
+            </div>
+          </div>
+        </div>
+        <div className="section-shell mt-10 flex flex-col gap-3 border-t border-white/[0.12] pt-6 text-sm leading-6 text-white/[0.62] sm:flex-row sm:items-center sm:justify-between">
+          <p>© 2026 Clearaway Services Ltd. Company Registration No. 10416600.</p>
+          <div className="flex gap-4">
+            <a className="text-white/[0.62] hover:text-white" href="#top">
+              Privacy
+            </a>
+            <a className="text-white/[0.62] hover:text-white" href="#top">
+              Terms
+            </a>
+          </div>
+        </div>
+      </footer>
+      <FloatingActions />
+    </div>
+  )
+}
