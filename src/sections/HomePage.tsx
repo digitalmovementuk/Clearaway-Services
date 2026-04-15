@@ -215,6 +215,9 @@ export default function HomePage() {
                 <ContactForm label="Hero project enquiry form" />
               </Reveal>
             </div>
+            <Reveal className="mx-auto mt-10 w-full max-w-[1080px] lg:mt-12" delay={0.12}>
+              <TestimonialCarousel variant="hero" />
+            </Reveal>
           </div>
         </section>
 
@@ -439,17 +442,29 @@ export default function HomePage() {
         </section>
 
         <section id="proof" className="bg-clearaway-mist py-20 sm:py-24 lg:py-28">
-          <div className="section-shell grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
-            <Reveal>
+          <div className="section-shell">
+            <Reveal className="max-w-4xl">
               <p className="eyebrow">Proof and reassurance</p>
               <h2 className="mt-3 text-3xl font-extrabold leading-tight text-clearaway-navy sm:text-[2.55rem] lg:text-[3rem] lg:leading-[1.08]">
                 Public trust cues without unsupported claims.
               </h2>
               <p className="mt-5 text-lg leading-8 text-slate-600 lg:text-[1.16rem] lg:leading-[2rem]">
-                Public Google review text was not safely accessible during research, so this preview uses short excerpts
-                from testimonials visible on Clearaway’s own website and factual trust markers found there.
+                The hero section now carries the public Google review excerpts and the live rating summary visible for
+                Clearaway Asbestos. This section keeps the rest of the trust picture grounded in public business details
+                and source-visible credentials.
               </p>
-              <div className="mt-7 grid grid-cols-2 gap-4 sm:grid-cols-4">
+              <div className="mt-8 grid gap-4 sm:grid-cols-3">
+                {[
+                  'Google rating shown in the hero is 5.0 based on 6 reviews.',
+                  'Reviewer names and excerpts are taken from the visible Google review list.',
+                  'Trust logos below reflect sources visible on the existing website.',
+                ].map((item) => (
+                  <div key={item} className="rounded-[8px] border border-clearaway-line bg-white p-5">
+                    <p className="font-semibold leading-7 text-clearaway-navy">{item}</p>
+                  </div>
+                ))}
+              </div>
+              <div className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-4">
                 {[
                   { src: hseLogo, width: 155, height: 125, alt: 'Health and Safety Executive logo' },
                   { src: scopesLogo, width: 203, height: 100, alt: 'Public trust logo from Clearaway website' },
@@ -467,9 +482,6 @@ export default function HomePage() {
                   </div>
                 ))}
               </div>
-            </Reveal>
-            <Reveal delay={0.08}>
-              <TestimonialCarousel />
             </Reveal>
           </div>
         </section>
