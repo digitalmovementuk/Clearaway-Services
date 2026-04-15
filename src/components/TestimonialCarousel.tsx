@@ -55,7 +55,7 @@ export default function TestimonialCarousel({ variant = 'default' }: Testimonial
     <div
       className={
         isHero
-          ? 'rounded-[8px] border border-white/16 bg-black/30 p-5 text-white shadow-[0_20px_54px_rgba(9,3,77,0.22)] backdrop-blur-md sm:p-7'
+          ? 'rounded-[8px] border border-white/16 bg-black/32 p-4 text-white shadow-[0_20px_54px_rgba(9,3,77,0.22)] backdrop-blur-md sm:p-5'
           : 'rounded-[8px] border border-clearaway-line bg-white p-5 shadow-clean sm:p-7'
       }
       aria-roledescription="carousel"
@@ -70,7 +70,7 @@ export default function TestimonialCarousel({ variant = 'default' }: Testimonial
         if (Math.abs(start - end) > 45) goTo(start > end ? 1 : -1)
       }}
     >
-      <div className="flex items-center justify-between gap-4">
+      <div className="flex items-start justify-between gap-4">
         <div>
           <p className={`text-sm font-bold uppercase leading-5 ${isHero ? 'text-white/82' : 'text-clearaway-cyanDark'}`}>
             Google reviews
@@ -88,7 +88,7 @@ export default function TestimonialCarousel({ variant = 'default' }: Testimonial
         </div>
         <span className="sr-only">Five star testimonial</span>
       </div>
-      <div className={`mt-5 flex items-center gap-2 text-[1.75rem] font-extrabold leading-none ${isHero ? 'text-white' : 'text-clearaway-navy'}`}>
+      <div className={`mt-4 flex items-center gap-2 text-[1.55rem] font-extrabold leading-none ${isHero ? 'text-white' : 'text-clearaway-navy'}`}>
         <span className="text-[#4285F4]">G</span>
         <span className="text-[#EA4335]">o</span>
         <span className="text-[#FBBC05]">o</span>
@@ -96,10 +96,10 @@ export default function TestimonialCarousel({ variant = 'default' }: Testimonial
         <span className="text-[#34A853]">l</span>
         <span className="text-[#EA4335]">e</span>
       </div>
-      <div className={`mt-6 ${isHero ? 'min-h-[182px]' : 'min-h-[138px]'}`} aria-live="polite">
+      <div className={`mt-5 ${isHero ? 'min-h-[108px] lg:min-h-[124px]' : 'min-h-[138px]'}`} aria-live="polite">
         <blockquote
           className={`font-bold ${
-            isHero ? 'text-[1.7rem] leading-[2.25rem] text-white sm:text-[2rem] sm:leading-[2.5rem]' : 'text-2xl leading-9 text-clearaway-navy sm:text-3xl sm:leading-10'
+            isHero ? 'text-[1.1rem] leading-8 text-white sm:text-[1.18rem] sm:leading-8 lg:text-[1.28rem] lg:leading-9' : 'text-2xl leading-9 text-clearaway-navy sm:text-3xl sm:leading-10'
           }`}
         >
           “{current.quote}”
@@ -118,7 +118,7 @@ export default function TestimonialCarousel({ variant = 'default' }: Testimonial
           </div>
         </div>
       </div>
-      <div className="mt-6 flex items-center justify-between">
+      <div className={`mt-5 flex items-center justify-between ${isHero ? 'border-t border-white/12 pt-4' : ''}`}>
         <div className="flex gap-2" aria-hidden="true">
           {testimonials.map((testimonial, itemIndex) => (
             <span

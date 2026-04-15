@@ -155,7 +155,7 @@ export default function HomePage() {
       <main id="main">
         <section
           id="hero-section"
-          className="relative min-h-[860px] overflow-hidden pt-28 text-white lg:min-h-[780px]"
+          className="relative min-h-[860px] overflow-hidden pt-28 text-white lg:min-h-[760px]"
           data-testid="hero"
         >
           <video
@@ -170,54 +170,56 @@ export default function HomePage() {
             aria-hidden="true"
             data-testid="hero-video"
           />
-          <div className="section-shell relative z-10 py-12 lg:py-20">
+          <div className="section-shell relative z-10 py-10 lg:py-14">
             <div className="hero-grid">
               <Reveal
-                className="mx-auto max-w-4xl rounded-[8px] bg-clearaway-navy/20 p-4 text-center shadow-[0_18px_60px_rgba(9,3,77,0.18)] backdrop-blur-[2px] sm:p-6 lg:mx-0 lg:bg-transparent lg:p-0 lg:text-left lg:shadow-none lg:backdrop-blur-0"
+                className="mx-auto max-w-4xl rounded-[8px] bg-clearaway-navy/20 p-4 text-center shadow-[0_18px_60px_rgba(9,3,77,0.18)] backdrop-blur-[2px] sm:p-6 lg:mx-0 lg:flex lg:flex-col lg:gap-6 lg:bg-transparent lg:p-0 lg:text-left lg:shadow-none lg:backdrop-blur-0"
                 data-testid="hero-copy"
               >
-                <p className="inline-flex rounded-[6px] bg-white/[0.12] px-3 py-2 text-sm font-bold leading-5 text-white ring-1 ring-white/[0.22]">
-                  London, Surrey and the South East
-                </p>
-                <h1
-                  className="mt-6 text-4xl font-extrabold leading-[1.12] text-white sm:text-5xl sm:leading-[1.08] lg:text-[4.55rem] lg:leading-[1.02]"
-                  style={{ textShadow: '0 10px 32px rgba(9, 3, 77, 0.5)' }}
-                >
-                  Licensed asbestos removal and strip-out without project drift.
-                </h1>
-                <p
-                  className="mt-6 max-w-[52rem] text-lg leading-8 text-white/[0.96] sm:text-[1.16rem] sm:leading-9 lg:text-[1.3rem] lg:leading-[2.25rem]"
-                  style={{ textShadow: '0 8px 26px rgba(9, 3, 77, 0.42)' }}
-                >
-                  Clearaway Services supports contractors, developers and property managers with asbestos surveys, air
-                  testing, safe removal, demolition and soft strip-out work.
-                </p>
-                <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row lg:justify-start">
-                  <a className="btn-primary bg-clearaway-cyanDark hover:bg-clearaway-blue" href="#contact">
-                    Request a quote <ArrowRight aria-hidden="true" size={18} />
-                  </a>
-                  <a className="btn-secondary border-white/[0.45] bg-white/95 text-clearaway-blue" href="tel:02089414433">
-                    <Phone aria-hidden="true" size={18} /> 020 8941 4433
-                  </a>
+                <div>
+                  <p className="inline-flex rounded-[6px] bg-white/[0.12] px-3 py-2 text-sm font-bold leading-5 text-white ring-1 ring-white/[0.22]">
+                    London, Surrey and the South East
+                  </p>
+                  <h1
+                    className="mt-5 text-4xl font-extrabold leading-[1.12] text-white sm:text-5xl sm:leading-[1.08] lg:text-[4rem] lg:leading-[1.01] xl:text-[4.35rem]"
+                    style={{ textShadow: '0 10px 32px rgba(9, 3, 77, 0.5)' }}
+                  >
+                    Licensed asbestos removal and strip-out without project drift.
+                  </h1>
+                  <p
+                    className="mt-5 max-w-[48rem] text-lg leading-8 text-white/[0.96] sm:text-[1.16rem] sm:leading-9 lg:text-[1.18rem] lg:leading-[2rem]"
+                    style={{ textShadow: '0 8px 26px rgba(9, 3, 77, 0.42)' }}
+                  >
+                    Clearaway Services supports contractors, developers and property managers with asbestos surveys, air
+                    testing, safe removal, demolition and soft strip-out work.
+                  </p>
+                  <div className="mt-7 flex flex-col justify-center gap-4 sm:flex-row lg:justify-start">
+                    <a className="btn-primary bg-clearaway-cyanDark hover:bg-clearaway-blue" href="#contact">
+                      Request a quote <ArrowRight aria-hidden="true" size={18} />
+                    </a>
+                    <a className="btn-secondary border-white/[0.45] bg-white/95 text-clearaway-blue" href="tel:02089414433">
+                      <Phone aria-hidden="true" size={18} /> 020 8941 4433
+                    </a>
+                  </div>
+                  <div className="mt-8 grid gap-3 text-left sm:grid-cols-3">
+                    {['15+ years experience stated', 'HSE licensed asbestos work', '24/7 project support stated'].map(
+                      (item) => (
+                        <div key={item} className="rounded-[8px] border border-white/[0.22] bg-clearaway-navy/24 p-3 backdrop-blur-sm">
+                          <BadgeCheck aria-hidden="true" className="mb-2 text-clearaway-green" size={20} />
+                          <p className="text-sm font-semibold leading-5 text-white lg:text-[0.95rem] lg:leading-6">{item}</p>
+                        </div>
+                      ),
+                    )}
+                  </div>
                 </div>
-                <div className="mt-10 grid gap-4 text-left sm:grid-cols-3">
-                  {['15+ years experience stated', 'HSE licensed asbestos work', '24/7 project support stated'].map(
-                    (item) => (
-                      <div key={item} className="rounded-[8px] border border-white/[0.24] bg-clearaway-navy/28 p-4 backdrop-blur-md">
-                        <BadgeCheck aria-hidden="true" className="mb-2 text-clearaway-green" size={22} />
-                        <p className="text-sm font-semibold leading-5 text-white lg:text-[1rem] lg:leading-6">{item}</p>
-                      </div>
-                    ),
-                  )}
+                <div className="mx-auto w-full max-w-[820px] lg:mx-0 lg:max-w-[760px]">
+                  <TestimonialCarousel variant="hero" />
                 </div>
               </Reveal>
               <Reveal className="mx-auto w-full max-w-[500px] lg:mx-0" delay={0.08} data-testid="hero-form">
                 <ContactForm label="Hero project enquiry form" />
               </Reveal>
             </div>
-            <Reveal className="mx-auto mt-10 w-full max-w-[1080px] lg:mt-12" delay={0.12}>
-              <TestimonialCarousel variant="hero" />
-            </Reveal>
           </div>
         </section>
 
