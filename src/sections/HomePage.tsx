@@ -170,29 +170,29 @@ export default function HomePage() {
             aria-hidden="true"
             data-testid="hero-video"
           />
-          <div className="section-shell relative z-10 py-12 lg:py-16">
+          <div className="section-shell relative z-10 py-12 lg:py-20">
             <div className="hero-grid">
               <Reveal
-                className="mx-auto max-w-3xl text-center lg:mx-0 lg:text-left"
+                className="mx-auto max-w-4xl rounded-[8px] bg-clearaway-navy/20 p-4 text-center shadow-[0_18px_60px_rgba(9,3,77,0.18)] backdrop-blur-[2px] sm:p-6 lg:mx-0 lg:bg-transparent lg:p-0 lg:text-left lg:shadow-none lg:backdrop-blur-0"
                 data-testid="hero-copy"
               >
-                <p className="inline-flex rounded-[6px] bg-clearaway-navy/28 px-3 py-2 text-sm font-bold leading-5 text-white ring-1 ring-white/18 backdrop-blur-sm">
+                <p className="inline-flex rounded-[6px] bg-white/[0.12] px-3 py-2 text-sm font-bold leading-5 text-white ring-1 ring-white/[0.22]">
                   London, Surrey and the South East
                 </p>
                 <h1
-                  className="mt-6 text-4xl font-extrabold leading-[1.12] text-white sm:text-5xl sm:leading-[1.1] lg:text-6xl lg:leading-[1.06]"
-                  style={{ textShadow: '0 14px 38px rgba(9, 3, 77, 0.52)' }}
+                  className="mt-6 text-4xl font-extrabold leading-[1.12] text-white sm:text-5xl sm:leading-[1.08] lg:text-[4.55rem] lg:leading-[1.02]"
+                  style={{ textShadow: '0 10px 32px rgba(9, 3, 77, 0.5)' }}
                 >
                   Licensed asbestos removal and strip-out without project drift.
                 </h1>
                 <p
-                  className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-white/[0.98] lg:mx-0 lg:text-xl lg:leading-9"
-                  style={{ textShadow: '0 10px 28px rgba(9, 3, 77, 0.44)' }}
+                  className="mt-6 max-w-[52rem] text-lg leading-8 text-white/[0.96] sm:text-[1.16rem] sm:leading-9 lg:text-[1.3rem] lg:leading-[2.25rem]"
+                  style={{ textShadow: '0 8px 26px rgba(9, 3, 77, 0.42)' }}
                 >
                   Clearaway Services supports contractors, developers and property managers with asbestos surveys, air
                   testing, safe removal, demolition and soft strip-out work.
                 </p>
-                <div className="mt-7 flex flex-col justify-center gap-3 sm:flex-row lg:justify-start">
+                <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row lg:justify-start">
                   <a className="btn-primary bg-clearaway-cyanDark hover:bg-clearaway-blue" href="#contact">
                     Request a quote <ArrowRight aria-hidden="true" size={18} />
                   </a>
@@ -200,21 +200,19 @@ export default function HomePage() {
                     <Phone aria-hidden="true" size={18} /> 020 8941 4433
                   </a>
                 </div>
-                <div className="mt-8 grid gap-3 text-left sm:grid-cols-3">
+                <div className="mt-10 grid gap-4 text-left sm:grid-cols-3">
                   {['15+ years experience stated', 'HSE licensed asbestos work', '24/7 project support stated'].map(
                     (item) => (
-                      <div key={item} className="rounded-[8px] border border-white/16 bg-black/12 p-3 backdrop-blur-sm">
-                        <BadgeCheck aria-hidden="true" className="mb-2 text-clearaway-green" size={20} />
-                        <p className="text-sm font-semibold leading-5 text-white" style={{ textShadow: '0 8px 22px rgba(9, 3, 77, 0.4)' }}>
-                          {item}
-                        </p>
+                      <div key={item} className="rounded-[8px] border border-white/[0.24] bg-clearaway-navy/28 p-4 backdrop-blur-md">
+                        <BadgeCheck aria-hidden="true" className="mb-2 text-clearaway-green" size={22} />
+                        <p className="text-sm font-semibold leading-5 text-white lg:text-[1rem] lg:leading-6">{item}</p>
                       </div>
                     ),
                   )}
                 </div>
               </Reveal>
-              <Reveal className="mx-auto w-full max-w-[430px] lg:mx-0" delay={0.08} data-testid="hero-form">
-                <ContactForm label="Hero project enquiry form" variant="hero" />
+              <Reveal className="mx-auto w-full max-w-[500px] lg:mx-0" delay={0.08} data-testid="hero-form">
+                <ContactForm label="Hero project enquiry form" />
               </Reveal>
             </div>
           </div>
@@ -238,17 +236,17 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section className="py-20 sm:py-24">
+        <section className="py-20 sm:py-24 lg:py-28">
           <div className="section-shell">
             <div className="grid gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:items-center">
               <Reveal>
                 <p className="eyebrow">Control before disruption</p>
-                <h2 className="mt-3 text-3xl font-extrabold leading-tight text-clearaway-navy sm:text-4xl">
+                <h2 className="mt-3 text-3xl font-extrabold leading-tight text-clearaway-navy sm:text-[2.55rem] lg:text-[3rem] lg:leading-[1.08]">
                   Refurbishment and demolition work gets expensive when asbestos risk is unclear.
                 </h2>
               </Reveal>
               <Reveal delay={0.08}>
-                <div className="grid gap-5 text-lg leading-8 text-slate-600">
+                <div className="grid gap-6 text-lg leading-8 text-slate-600 lg:text-[1.16rem] lg:leading-[2rem]">
                   <p>
                     Contractors and property teams need fast answers, safe working methods and clear communication before
                     work starts opening up a building.
@@ -260,7 +258,7 @@ export default function HomePage() {
                 </div>
               </Reveal>
             </div>
-            <div className="mt-12 grid gap-4 md:grid-cols-3">
+            <div className="mt-14 grid gap-5 md:grid-cols-3">
               {siteImpressions.map((item, index) => (
                 <Reveal key={item.label} delay={index * 0.04} className="group relative h-64 overflow-hidden rounded-[8px] bg-clearaway-navy shadow-clean">
                   <img
@@ -281,19 +279,19 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section id="services" className="bg-clearaway-mist py-20 sm:py-24">
+        <section id="services" className="bg-clearaway-mist py-20 sm:py-24 lg:py-28">
           <div className="section-shell">
-            <Reveal className="max-w-3xl">
+            <Reveal className="max-w-4xl">
               <p className="eyebrow">Services</p>
-              <h2 className="mt-3 text-3xl font-extrabold leading-tight text-clearaway-navy sm:text-4xl">
+              <h2 className="mt-3 text-3xl font-extrabold leading-tight text-clearaway-navy sm:text-[2.55rem] lg:text-[3rem] lg:leading-[1.08]">
                 Specialist asbestos, demolition and soft strip-out services.
               </h2>
-              <p className="mt-4 text-lg leading-8 text-slate-600">
+              <p className="mt-4 text-lg leading-8 text-slate-600 lg:text-[1.16rem] lg:leading-[2rem]">
                 The offer is built around commercial and industrial sites that need safety, speed and compliance to line
                 up.
               </p>
             </Reveal>
-            <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+            <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
               {services.map((service, index) => (
                 <Reveal
                   key={service.title}
@@ -317,7 +315,7 @@ export default function HomePage() {
                   </div>
                   <div className="p-6">
                     <h3 className="text-xl font-extrabold leading-7 text-clearaway-navy">{service.title}</h3>
-                    <p className="mt-3 text-base leading-7 text-slate-600">{service.description}</p>
+                    <p className="mt-3 text-base leading-7 text-slate-600 lg:text-[1.06rem] lg:leading-[1.9rem]">{service.description}</p>
                     <p className="mt-4 border-l-4 border-clearaway-green pl-3 text-sm font-bold leading-6 text-clearaway-blue">
                       {service.benefit}
                     </p>
@@ -331,7 +329,7 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section className="py-20 sm:py-24">
+        <section className="py-20 sm:py-24 lg:py-28">
           <div className="section-shell grid gap-10 lg:grid-cols-2 lg:items-center">
             <Reveal>
               <div className="relative overflow-hidden rounded-[8px] bg-clearaway-navy shadow-clean">
@@ -355,10 +353,10 @@ export default function HomePage() {
             </Reveal>
             <Reveal delay={0.08}>
               <p className="eyebrow">One coordinated route</p>
-              <h2 className="mt-3 text-3xl font-extrabold leading-tight text-clearaway-navy sm:text-4xl">
+              <h2 className="mt-3 text-3xl font-extrabold leading-tight text-clearaway-navy sm:text-[2.55rem] lg:text-[3rem] lg:leading-[1.08]">
                 From asbestos survey to safe strip-out and handover.
               </h2>
-              <p className="mt-5 text-lg leading-8 text-slate-600">
+              <p className="mt-5 text-lg leading-8 text-slate-600 lg:text-[1.16rem] lg:leading-[2rem]">
                 Clearaway’s existing positioning highlights a one-stop approach: asbestos survey, asbestos removal and
                 soft strip demolition managed through a single contractor.
               </p>
@@ -380,7 +378,7 @@ export default function HomePage() {
           <div className="section-shell">
             <Reveal className="max-w-3xl">
               <p className="font-bold uppercase leading-5 text-clearaway-cyan">How it works</p>
-              <h2 className="mt-3 text-3xl font-extrabold leading-tight sm:text-4xl">
+              <h2 className="mt-3 text-3xl font-extrabold leading-tight sm:text-[2.55rem] lg:text-[3rem] lg:leading-[1.08]">
                 A practical path from first call to site clearance.
               </h2>
             </Reveal>
@@ -395,21 +393,21 @@ export default function HomePage() {
                     {index + 1}
                   </span>
                   <h3 className="mt-5 text-xl font-extrabold leading-7">{step.title}</h3>
-                  <p className="mt-3 text-base leading-7 text-white/[0.78]">{step.text}</p>
+                  <p className="mt-3 text-base leading-7 text-white/[0.78] lg:text-[1.04rem] lg:leading-[1.9rem]">{step.text}</p>
                 </Reveal>
               ))}
             </div>
           </div>
         </section>
 
-        <section className="py-20 sm:py-24">
+        <section className="py-20 sm:py-24 lg:py-28">
           <div className="section-shell grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
             <Reveal>
               <p className="eyebrow">Why Clearaway</p>
-              <h2 className="mt-3 text-3xl font-extrabold leading-tight text-clearaway-navy sm:text-4xl">
+              <h2 className="mt-3 text-3xl font-extrabold leading-tight text-clearaway-navy sm:text-[2.55rem] lg:text-[3rem] lg:leading-[1.08]">
                 Built for live sites, sensitive buildings and strict deadlines.
               </h2>
-              <p className="mt-5 text-lg leading-8 text-slate-600">
+              <p className="mt-5 text-lg leading-8 text-slate-600 lg:text-[1.16rem] lg:leading-[2rem]">
                 The current site places emphasis on trained operatives, CSCS demolition specialist cards, HSE standards,
                 risk assessments, recycling and adapting work around site restrictions.
               </p>
@@ -440,14 +438,14 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section id="proof" className="bg-clearaway-mist py-20 sm:py-24">
+        <section id="proof" className="bg-clearaway-mist py-20 sm:py-24 lg:py-28">
           <div className="section-shell grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
             <Reveal>
               <p className="eyebrow">Proof and reassurance</p>
-              <h2 className="mt-3 text-3xl font-extrabold leading-tight text-clearaway-navy sm:text-4xl">
+              <h2 className="mt-3 text-3xl font-extrabold leading-tight text-clearaway-navy sm:text-[2.55rem] lg:text-[3rem] lg:leading-[1.08]">
                 Public trust cues without unsupported claims.
               </h2>
-              <p className="mt-5 text-lg leading-8 text-slate-600">
+              <p className="mt-5 text-lg leading-8 text-slate-600 lg:text-[1.16rem] lg:leading-[2rem]">
                 Public Google review text was not safely accessible during research, so this preview uses short excerpts
                 from testimonials visible on Clearaway’s own website and factual trust markers found there.
               </p>
@@ -476,7 +474,7 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section id="about" className="py-20 sm:py-24">
+        <section id="about" className="py-20 sm:py-24 lg:py-28">
           <div className="section-shell grid gap-10 lg:grid-cols-2 lg:items-center">
             <Reveal>
               <img
@@ -490,14 +488,14 @@ export default function HomePage() {
             </Reveal>
             <Reveal delay={0.08}>
               <p className="eyebrow">About Clearaway Services</p>
-              <h2 className="mt-3 text-3xl font-extrabold leading-tight text-clearaway-navy sm:text-4xl">
+              <h2 className="mt-3 text-3xl font-extrabold leading-tight text-clearaway-navy sm:text-[2.55rem] lg:text-[3rem] lg:leading-[1.08]">
                 Surrey-based specialists serving London and the South East.
               </h2>
-              <p className="mt-5 text-lg leading-8 text-slate-600">
+              <p className="mt-5 text-lg leading-8 text-slate-600 lg:text-[1.16rem] lg:leading-[2rem]">
                 Clearaway describes itself as an experienced, friendly and professional team for soft building strip-out,
                 internal demolition, waste removal and asbestos services.
               </p>
-              <p className="mt-4 text-lg leading-8 text-slate-600">
+              <p className="mt-4 text-lg leading-8 text-slate-600 lg:text-[1.16rem] lg:leading-[2rem]">
                 The brand’s strongest message is practical confidence: trained people, compliant processes and a team
                 that can help whether the work is a targeted strip-out or a larger commercial programme.
               </p>
@@ -508,11 +506,11 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section id="contact" className="bg-clearaway-mist py-20 sm:py-24">
+        <section id="contact" className="bg-clearaway-mist py-20 sm:py-24 lg:py-28">
           <div className="section-shell grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
             <Reveal>
               <p className="eyebrow">Contact and service area</p>
-              <h2 className="mt-3 text-3xl font-extrabold leading-tight text-clearaway-navy sm:text-4xl">
+              <h2 className="mt-3 text-3xl font-extrabold leading-tight text-clearaway-navy sm:text-[2.55rem] lg:text-[3rem] lg:leading-[1.08]">
                 Speak to the team about access, asbestos risk and next steps.
               </h2>
               <div className="mt-8 grid gap-4">
@@ -553,14 +551,14 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section id="faq" className="py-20 sm:py-24">
+        <section id="faq" className="py-20 sm:py-24 lg:py-28">
           <div className="section-shell grid gap-10 lg:grid-cols-[0.85fr_1.15fr]">
             <Reveal>
               <p className="eyebrow">FAQ</p>
-              <h2 className="mt-3 text-3xl font-extrabold leading-tight text-clearaway-navy sm:text-4xl">
+              <h2 className="mt-3 text-3xl font-extrabold leading-tight text-clearaway-navy sm:text-[2.55rem] lg:text-[3rem] lg:leading-[1.08]">
                 Common questions before the first call.
               </h2>
-              <p className="mt-5 text-lg leading-8 text-slate-600">
+              <p className="mt-5 text-lg leading-8 text-slate-600 lg:text-[1.16rem] lg:leading-[2rem]">
                 The safest starting point is a quick conversation about what is known, what is suspected and what the
                 next trade needs from the building.
               </p>
@@ -575,7 +573,7 @@ export default function HomePage() {
           <div className="section-shell flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
             <div>
               <p className="text-sm font-bold uppercase leading-5 text-white/[0.78]">Ready to plan the next step?</p>
-              <h2 className="mt-2 text-3xl font-extrabold leading-tight">Get a clear route for your site.</h2>
+              <h2 className="mt-2 text-3xl font-extrabold leading-tight sm:text-[2.55rem] lg:text-[3rem] lg:leading-[1.08]">Get a clear route for your site.</h2>
             </div>
             <div className="flex flex-col gap-3 sm:flex-row">
               <a className="btn-secondary border-white bg-white text-clearaway-blue" href="#contact">

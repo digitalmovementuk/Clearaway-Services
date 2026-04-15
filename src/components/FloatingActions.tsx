@@ -54,7 +54,7 @@ export default function FloatingActions() {
         aria-hidden={!visible}
         data-testid="bottom-cta"
       >
-        <div className="mx-auto flex w-full max-w-[1180px] items-center justify-between gap-3">
+        <div className="mx-auto flex w-full max-w-[1380px] items-center justify-between gap-3">
           <p className="min-w-0 text-sm font-semibold leading-5 sm:text-base">
             <span className="block sm:hidden">Need site advice?</span>
             <span className="hidden sm:block">Need asbestos removal, testing or strip-out support?</span>

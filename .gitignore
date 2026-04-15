@@ -12,6 +12,9 @@ dist
 dist-ssr
 test-results
 *.local
+Assets/
+src/assets/videos/Cleanaway Hero no music.mp4
+tests/screenshots/hero-video-check-*.png
 
 # Editor directories and files
 .vscode/*
